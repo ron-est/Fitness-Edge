@@ -26,4 +26,4 @@ Workout.init({
   }
 }, { sequelize, modelName: 'workout' })
 
-module.exports = Workouts
+module.exports = Workout
