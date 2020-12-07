@@ -8,8 +8,12 @@ Workout.init({
     type: DataTypes.STRING,
     allowNull: false
   },
+  muscle: {
+      type: DataTypes.STRING,
+      allowNull: false
+  },
   sets: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   reps: {
@@ -17,7 +21,7 @@ Workout.init({
     allowNull: false
   },
   weight: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true
   },
   description: {
