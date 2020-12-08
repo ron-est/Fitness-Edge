@@ -50,6 +50,7 @@ document.getElementById('addWorkout').addEventListener('click', event => {
         document.getElementById('weight').value = ''
         document.getElementById('description').value = ''
         document.getElementById('warning').textContent = ''
+        location.reload()
       })
       .catch(err => { console.log() })
   } else {
