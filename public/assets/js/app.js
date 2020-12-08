@@ -43,7 +43,15 @@ document.addEventListener('click', event => {
 
     if (validateAddWorkout(workout)) {
       axios.post('/api/workouts', workout)
-        .then(() => { location.reload })
+        .then(() => {
+          document.getElementById('title').value = ''
+          document.getElementById('muscle').value = ''
+          document.getElementById('sets').value = ''
+          document.getElementById('reps').value = ''
+          document.getElementById('weight').value = ''
+          document.getElementById('description').value = ''
+          document.getElementById('warning').textContent = ''
+        })
         .catch(err => { console.log() })
     } else {
       document.getElementById('warning').textContent = "Required inputs must be filled."
