@@ -1,5 +1,3 @@
-
-
 const validateAddWorkout = ({ title, muscle, sets, reps, weight }) => {
   if (title === '') {
     return false
