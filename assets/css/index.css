@@ -26,10 +26,14 @@ main {
   background-color: #121c25;
 }
 
+.bodybg {
+  background-color: #2a3f58;
+}
+
 .parallax-container {
   height: 350px;
 }
 
-.bodybg {
-  background-color: #2a3f58;
+.start {
+  background-color: red;
 }
