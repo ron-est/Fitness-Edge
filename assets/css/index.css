@@ -22,6 +22,14 @@ main {
   }
 }
 
+.navf {
+  background-color: #121c25;
+}
+
 .parallax-container {
   height: 350px;
+}
+
+.bodybg {
+  background-color: #2a3f58;
 }
