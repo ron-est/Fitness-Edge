@@ -21,3 +21,7 @@ main {
     /* or higher percentages. It's up to your taste */
   }
 }
+
+.parallax-container {
+  height: 350px;
+}
