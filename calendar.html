@@ -30,6 +30,7 @@
       display: inline-block;
       white-space: normal;
       background-color: #121c25;
+      vertical-align: top;
     }
 
     .textWhite {
@@ -62,18 +63,20 @@
 <!-- https://dewey.tailorbrands.com/production/brand_version_mockup_image/720/4267272720_53195123-8bba-4e88-a023-1477f03b6c93.png?cb=1607542101 -->
 
 <body>
-  <nav>
-    <div class="nav-wrapper" style="background-color: #121c25;">
-      <a href="#" class="brand-logo"><img
-          src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180'>
-      </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Home</a></li>
-        <li><a href="badges.html">Calender</a></li>
-        <li><a href="collapsible.html">About</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper" style="background-color: #121c25;">
+        <a href="#" class="brand-logo"><img
+            src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180'>
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Home</a></li>
+          <li><a href="badges.html">Calender</a></li>
+          <li><a href="collapsible.html">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
   <h5 class="textWhite">To get started, click on the plus icon in the bottom right corner of the day you would like to
     select a workout.</h5>
@@ -103,7 +106,7 @@
       <div class="card-content">
         <p class="textWhite">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam a temporibus explicabo?
           Unde maxime fugit quia debitis odio veritatis magnam aperiam error beatae enim exercitationem a explicabo
-          praesentium, cum impedit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sint incidunt tempora dolores ullam nam esse est facilis, non facere blanditiis id quod doloremque illum quaerat ex inventore at aliquam.</p>
+          praesentium, cum impedit. </p>
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modalTuesday"><i
             class="material-icons">add</i></a>
       </div>
