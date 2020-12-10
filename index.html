@@ -13,18 +13,30 @@
 <body>
   <nav class="navf z-depth-5">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><img
-          src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
-      </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="white-text" href="./index.html">Home</a></li>
-        <li><a class="white-text" href="./calendar.html">Calendar</a></li>
-        <li><a class="white-text" href="./about.html">About</a></li>
-      </ul>
+
+      <div class="container">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="index.html" class="brand-logo"><img
+            src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+        </a>
+
+        <ul class="right hide-on-med-and-down right">
+          <li class="active"><a class="white-text" href="./index.html">Home</a></li>
+          <li><a class="white-text" href="./calendar.html">Calendar</a></li>
+          <li><a class="white-text" href="./about.html">About</a></li>
+        </ul>
+      </div>
+
     </div>
   </nav>
-  <!-- navbar ends -->
 
+  <ul id="slide-out" class="sidenav  cyan darken-1">
+    <li class="active"><a class="white-text" href="./index.html"><i class="material-icons">home</i>Home</a></li>
+    <li><a class="white-text" href="./calendar.html">Calendar</a></li>
+    <li><a class="white-text" href="./about.html">About</a></li>
+  </ul>
+
+  <!-- navbar ends -->
 
   <!-- page content starts -->
   <div class="parallax-container">
@@ -66,13 +78,13 @@
               <strong>Responsive</strong>
             </h5>
             <h6>
-              Fully responsive website works great on any size device from smartphones to desktop PC, making it fast and easy,
-              taking less of your valuable time.
+              Fully responsive website works great on any size device from smartphones to desktop PC, making it fast and
+              easy, taking less of your valuable time.
             </h6>
           </div>
         </div>
       </div>
-      <!-- link to calendar --> 
+      <!-- link to calendar -->
       <a class="waves-effect waves-light btn z-depth-3 accentbg" href="./calendar.html">Start Here</a>
       <!-- . -->
     </div>
@@ -116,6 +128,11 @@
     document.addEventListener('DOMContentLoaded', () => {
       const parallaxEffect = document.querySelectorAll('.parallax');
       M.Parallax.init(parallaxEffect, {});
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const slide = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(slide, {});
     });
   </script>
 </body>
