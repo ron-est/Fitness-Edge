@@ -8,37 +8,39 @@ main {
   flex: 1 0 auto;
 }
 
-/* keeps pictures highdef and wont zoom in */
+/* PARALLAX height and responsive width */
+
+.parallax-container {
+  height: 350px;
+}
 
 @media only screen and (max-width: 992px) {
   .parallax img {
     max-height: 130%;
-    /* or a little bit higher */
   }
 }
 
 @media only screen and (min-width: 993px) {
   .parallax img {
     max-height: 170%;
-    /* or higher percentages. */
   }
 }
 
-/* navbar&footer + sidenav */
+/* THEME navbar&footer + sidenav */
 
 .navf, .sidenav {
   background-color: #121c25;
 }
 
+/* THEME body */
+
 body, .bodybg {
   background-color: #2a3f58;
 }
 
-.parallax-container {
-  height: 350px;
-}
+/* THEME accent */
 
-.accent{
+.accent {
   color: #e51b23;
 }
 
