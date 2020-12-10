@@ -4,14 +4,6 @@ body {
   flex-direction: column;
 }
 
-/* .aboutbg {
-  background: url('../img/coloredWeights.jpg#') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
-
 main {
   flex: 1 0 auto;
 }
@@ -42,10 +34,10 @@ body, .bodybg {
   height: 350px;
 }
 
-.material-icons {
+.accent {
   color: #e51b23;
 }
 
-.start {
+.accentbg {
   background-color: #e51b23;
 }
