@@ -8,6 +8,8 @@ main {
   flex: 1 0 auto;
 }
 
+/* keeps pictures highdef and wont zoom in */
+
 @media only screen and (max-width: 992px) {
   .parallax img {
     max-height: 130%;
@@ -18,11 +20,13 @@ main {
 @media only screen and (min-width: 993px) {
   .parallax img {
     max-height: 170%;
-    /* or higher percentages. It's up to your taste */
+    /* or higher percentages. */
   }
 }
 
-.navf {
+/* navbar&footer + sidenav */
+
+.navf, .sidenav {
   background-color: #121c25;
 }
 
@@ -34,7 +38,7 @@ body, .bodybg {
   height: 350px;
 }
 
-.accent {
+.accent{
   color: #e51b23;
 }
 
