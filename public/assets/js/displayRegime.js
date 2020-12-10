@@ -1,87 +1,12 @@
-let regime = JSON.parse(localStorage.getItem('fitness_edge_weekly_regime'))
-console.log(regime)
-if (!regime) {
-  regime = [
-    [
-      {
-        title: "Test",
-        muscle: "Test",
-        sets: 0,
-        reps: "Test",
-        weight: 0,
-        description: "Test"
-      }
-    ],
-    [
-      {
-        title: "Test",
-        muscle: "Test",
-        sets: 0,
-        reps: "Test",
-        weight: 0,
-        description: "Test"
-      }
-    ],
-    [
-      {
-        title: "Test",
-        muscle: "Test",
-        sets: 0,
-        reps: "Test",
-        weight: 0,
-        description: "Test"
-      }
-    ],
-    [
-      {
-        title: "Test",
-        muscle: "Test",
-        sets: 0,
-        reps: "Test",
-        weight: 0,
-        description: "Test"
-      }
-    ],
-    [
-      {
-        title: "Test",
-        muscle: "Test",
-        sets: 0,
-        reps: "Test",
-        weight: 0,
-        description: "Test"
-      }
-    ],
-    [
-      {
-        title: "Test",
-        muscle: "Test",
-        sets: 0,
-        reps: "Test",
-        weight: 0,
-        description: "Test"
-      }
-    ],
-    [
-      {
-        title: "Test",
-        muscle: "Test",
-        sets: 0,
-        reps: "Test",
-        weight: 0,
-        description: "Test"
-      }
-    ]
-  ]
+let weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
-  localStorage.setItem('fitness_edge_weekly_regime', JSON.stringify(regime))
-}
+const displayRegimeInit = () => {
 
-weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-
-regime.forEach((workouts, i) => {
-  let list = workouts.map(({ title, muscle, sets, reps, weight, description }) => {
-    let htmlText = `
+  let regime = getRegime()
+  let workouts = getWorkouts()
+  regime.forEach((workouts, i) => {
+    let list = workouts.map(({ title, muscle, sets, reps, weight, description }) => {
+      let htmlText = `
       <li>
       <p>Title: ${title}</p>
       <p>Muscle: ${muscle}</p>
@@ -89,24 +14,24 @@ regime.forEach((workouts, i) => {
       <p>Reps: ${reps}</p>
       `
 
-    if (weight) {
-      htmlText += `<p>Weight: ${weight}</p>`
-    }
-    if (description) {
-      htmlText += `
+      if (weight) {
+        htmlText += `<p>Weight: ${weight}</p>`
+      }
+      if (description) {
+        htmlText += `
         <label>Description:</label> 
         <p>${description}</p>`
-    }
-    htmlText += '</li>'
+      }
+      htmlText += '</li>'
 
-    return htmlText
+      return htmlText
+    })
+
+    document.getElementById(weekdays[i]).innerHTML = list.join('')
   })
+}
 
-  document.getElementById(weekdays[i]).innerHTML = list.join('')
-})
-
-
-
+displayRegimeInit()
 
 // axios.get('/api/workouts')
 //   .then(({ data }) => {
