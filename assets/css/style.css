@@ -4,6 +4,14 @@ body {
   flex-direction: column;
 }
 
+/* .aboutbg {
+  background: url('../img/coloredWeights.jpg#') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
 main {
   flex: 1 0 auto;
 }
