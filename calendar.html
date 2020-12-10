@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Fitness Edge - Calendar</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
   <style>
     #images {
       height: 100%;
@@ -39,7 +40,7 @@
 
     .modalStyle {
       background-color: #2a3f58;
-      height: 300px;
+      height: 5000px;
     }
 
     body {
@@ -52,12 +53,14 @@
         white-space: normal;
       }
 
-      .card {
-        width: 100%;
-
+      body {
+        max-width: 100%;
       }
+
+
     }
   </style>
+
 </head>
 
 <!-- https://dewey.tailorbrands.com/production/brand_version_mockup_image/720/4267272720_53195123-8bba-4e88-a023-1477f03b6c93.png?cb=1607542101 -->
@@ -81,7 +84,7 @@
   <h5 class="textWhite">To get started, click on the plus icon in the bottom right corner of the day you would like to
     select a workout.</h5>
 
-  <div id="cal" class="">
+  <div id="cal">
     <div class="card z-depth-2 hoverable">
       <div>
         <span class="card-title grey-text text-darken-4 center-align">
@@ -195,118 +198,651 @@
     </div>
   </div>
 
-
+  <!-- MON MODAL -->
+  <!--    V      -->
 
   <div class="modal modalStyle" id="modalMonday">
-    <h4 class="center-align">What workouts are we doing this Monday?</h4>
+    <h4 class="center-align textWhite">What workouts are we doing this Monday?</h4>
     <div class="row">
       <div class="col s12">
-        <ul class="tabs">
-          <li class="tab col s3"><a href="#test1">Test 1</a></li>
-          <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+        <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+          <li class="tab col s3" style="min-width:50%"><a href="#premade1">Suggested Workouts</a></li>
+          <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom1">Custom Workouts</a></li>
         </ul>
       </div>
-      
-      <div id="test1" class="col s12 textWhite">
-        <form>
-          <label>
-            hi there
-          </label>
-          <button>hi there two</button>
-        </form>
+
+        <div id="premade1" class="col s12 textWhite">
+          <table>
+            <tr>
+              <th>Legs</th>
+              <th>Chest</th>
+              <th>Shoulders</th>
+              <th>Back</th>
+              <th>Biceps</th>
+              <th>Triceps</th>
+              <th>Core</th>
+            </tr>
+            <tr>
+              <td><button type='btn'>Back Squat</button></td>
+              <td><button type='btn'>Bench Press</button></td>
+              <td><button type='btn'>Overhead Press</button></td>
+              <td><button type='btn'>Deadlift</button></td>
+              <td><button type='btn'>Barbell Curl</button></td>
+              <td><button type='btn'>Dips</button></td>
+              <td><button type='btn'>Ab Wheel</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Front Squat</button></td>
+              <td><button type='btn'>Incline Bench Press</button></td>
+              <td><button type='btn'>Seated Dumbell Press</button></td>
+              <td><button type='btn'>Barbell Row</button></td>
+              <td><button type='btn'>Dumbell Curl</button></td>
+              <td><button type='btn'>Tricep Pushdown</button></td>
+              <td><button type='btn'>Hanging Leg Raise</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Goblet Squat</button></td>
+              <td><button type='btn'>Dumbll Bench Press</button></td>
+              <td><button type='btn'>Lateral Raise</button></td>
+              <td><button type='btn'>Lat Pulldown</button></td>
+              <td><button type='btn'>Hammer Curl</button></td>
+              <td><button type='btn'>Skull Crusher</button></td>
+              <td><button type='btn'>Cable Oblique Twist</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Romanian Deadlift</button></td>
+              <td><button type='btn'>Dumbell Incline Press</button></td>
+              <td><button type='btn'>Rear Pec Deck</button></td>
+              <td><button type='btn'>Seated Cable Row</button></td>
+              <td></td>
+              <td><button type='btn'>Overhead Tricep Extension</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Leg Press</button></td>
+              <td><button type='btn'>Push Up</button></td>
+              <td><button type='btn'>Face Pull</button></td>
+              <td><button type='btn'>Dumbell Row</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Lunges</button></td>
+              <td></td>
+              <td></td>
+              <td><button type='btn'>Back Extension</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Leg Extension</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Leg Curl</button></td>
+            </tr>
+            <tr>
+              <td><button type='btn'>Calf Raise</button></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="custom1" class="col s12 textWhite">TEST 2!!?!!</div>
+      </div>
+      <div class="modal-footer" style="background-color:#2a3f58">
+        <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+      </div>
+    </div>
+
+    <!-- TUE MODAL -->
+    <!--    V      -->
+
+    <div class="modal modalStyle" id="modalTuesday">
+      <h4 class="center-align textWhite">What workouts are we doing this Monday?</h4>
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+            <li class="tab col s3" style="min-width:50%"><a href="#premade2">Suggested Workouts</a></li>
+            <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom2">Custom Workouts</a></li>
+          </ul>
+        </div>
+
+          <div id="premade2" class="col s12 textWhite">
+            <table>
+              <tr>
+                <th>Legs</th>
+                <th>Chest</th>
+                <th>Shoulders</th>
+                <th>Back</th>
+                <th>Biceps</th>
+                <th>Triceps</th>
+                <th>Core</th>
+              </tr>
+              <tr>
+                <td><button type='btn'>Back Squat</button></td>
+                <td><button type='btn'>Bench Press</button></td>
+                <td><button type='btn'>Overhead Press</button></td>
+                <td><button type='btn'>Deadlift</button></td>
+                <td><button type='btn'>Barbell Curl</button></td>
+                <td><button type='btn'>Dips</button></td>
+                <td><button type='btn'>Ab Wheel</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Front Squat</button></td>
+                <td><button type='btn'>Incline Bench Press</button></td>
+                <td><button type='btn'>Seated Dumbell Press</button></td>
+                <td><button type='btn'>Barbell Row</button></td>
+                <td><button type='btn'>Dumbell Curl</button></td>
+                <td><button type='btn'>Tricep Pushdown</button></td>
+                <td><button type='btn'>Hanging Leg Raise</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Goblet Squat</button></td>
+                <td><button type='btn'>Dumbll Bench Press</button></td>
+                <td><button type='btn'>Lateral Raise</button></td>
+                <td><button type='btn'>Lat Pulldown</button></td>
+                <td><button type='btn'>Hammer Curl</button></td>
+                <td><button type='btn'>Skull Crusher</button></td>
+                <td><button type='btn'>Cable Oblique Twist</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Romanian Deadlift</button></td>
+                <td><button type='btn'>Dumbell Incline Press</button></td>
+                <td><button type='btn'>Rear Pec Deck</button></td>
+                <td><button type='btn'>Seated Cable Row</button></td>
+                <td></td>
+                <td><button type='btn'>Overhead Tricep Extension</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Leg Press</button></td>
+                <td><button type='btn'>Push Up</button></td>
+                <td><button type='btn'>Face Pull</button></td>
+                <td><button type='btn'>Dumbell Row</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Lunges</button></td>
+                <td></td>
+                <td></td>
+                <td><button type='btn'>Back Extension</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Leg Extension</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Leg Curl</button></td>
+              </tr>
+              <tr>
+                <td><button type='btn'>Calf Raise</button></td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="custom2" class="col s12 textWhite">TEST 2!!?!!</div>
+        </div>
+        <div class="modal-footer" style="background-color:#2a3f58">
+          <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+        </div>
       </div>
 
-      <div id="test2" class="col s12 textWhite">TEST 2!!?!!</div>
-    </div>
-    <div class="modal-footer" style="background-color:#2a3f58">
-      <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
+      <!-- WED MODAL -->
+      <!--    V      -->
 
-  <div class="modal modalStyle" id="modalTuesday">
-    <h4 class="center-align">What workouts are we doing this Tuesday?</h4>
-    <ul class='center-align'>
-      <li class="btn orange center-align">Legs</li>
-      <li class="btn orange center-align">arms</li>
-      <li class="btn orange center-align">chest</li>
-      <li class="btn orange center-align">blah</li>
-    </ul>
-    <div class="modal-footer" style="background-color: #2a3f58">
-      <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
-  <div class="modal modalStyle" id="modalWednesday">
-    <h4 class="center-align">What workouts are we doing this Wednesday?</h4>
-    <ul class='center-align'>
-      <li class="btn orange center-align">Legs</li>
-      <li class="btn orange center-align">arms</li>
-      <li class="btn orange center-align">chest</li>
-      <li class="btn orange center-align">blah</li>
-    </ul>
-    <div class="modal-footer" style="background-color:#2a3f58">
-      <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
-  <div class="modal modalStyle" id="modalThursday">
-    <h4 class="center-align">What workouts are we doing this Thursday?</h4>
-    <ul class='center-align'>
-      <li class="btn orange center-align">Legs</li>
-      <li class="btn orange center-align">arms</li>
-      <li class="btn orange center-align">chest</li>
-      <li class="btn orange center-align">blah</li>
-    </ul>
-    <div class="modal-footer" style="background-color:#2a3f58">
-      <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
-  <div class="modal modalStyle" id="modalFriday">
-    <h4 class="center-align">What workouts are we doing this Friday?</h4>
-    <ul class='center-align'>
-      <li class="btn orange center-align">Legs</li>
-      <li class="btn orange center-align">arms</li>
-      <li class="btn orange center-align">chest</li>
-      <li class="btn orange center-align">blah</li>
-    </ul>
-    <div class="modal-footer" style="background-color:#2a3f58">
-      <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
-  <div class="modal modalStyle" id="modalSaturday">
-    <h4 class="center-align">What workouts are we doing this Saturday?</h4>
-    <ul class='center-align'>
-      <li class="btn orange center-align">Legs</li>
-      <li class="btn orange center-align">arms</li>
-      <li class="btn orange center-align">chest</li>
-      <li class="btn orange center-align">blah</li>
-    </ul>
-    <div class="modal-footer" style="background-color:#2a3f58">
-      <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
-  <div class="modal modalStyle" id="modalSunday">
-    <h4 class="center-align">What workouts are we doing this Sunday?</h4>
-    <ul class='center-align'>
-      <li class="btn orange center-align">Legs</li>
-      <li class="btn orange center-align">arms</li>
-      <li class="btn orange center-align">chest</li>
-      <li class="btn orange center-align">blah</li>
-    </ul>
-    <div class="modal-footer" style="background-color:#2a3f58">
-      <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
+      <div class="modal modalStyle" id="modalWednesday">
+        <h4 class="center-align textWhite">What workouts are we doing this Monday?</h4>
+        <div class="row">
+          <div class="col s12">
+            <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+              <li class="tab col s3" style="min-width:50%"><a href="#premade3">Suggested Workouts</a></li>
+              <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom3">Custom Workouts</a></li>
+            </ul>
+          </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('.modal').modal();
-    });
+            <div id="premade3" class="col s12 textWhite">
+              <table>
+                <tr>
+                  <th>Legs</th>
+                  <th>Chest</th>
+                  <th>Shoulders</th>
+                  <th>Back</th>
+                  <th>Biceps</th>
+                  <th>Triceps</th>
+                  <th>Core</th>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Back Squat</button></td>
+                  <td><button type='btn'>Bench Press</button></td>
+                  <td><button type='btn'>Overhead Press</button></td>
+                  <td><button type='btn'>Deadlift</button></td>
+                  <td><button type='btn'>Barbell Curl</button></td>
+                  <td><button type='btn'>Dips</button></td>
+                  <td><button type='btn'>Ab Wheel</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Front Squat</button></td>
+                  <td><button type='btn'>Incline Bench Press</button></td>
+                  <td><button type='btn'>Seated Dumbell Press</button></td>
+                  <td><button type='btn'>Barbell Row</button></td>
+                  <td><button type='btn'>Dumbell Curl</button></td>
+                  <td><button type='btn'>Tricep Pushdown</button></td>
+                  <td><button type='btn'>Hanging Leg Raise</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Goblet Squat</button></td>
+                  <td><button type='btn'>Dumbll Bench Press</button></td>
+                  <td><button type='btn'>Lateral Raise</button></td>
+                  <td><button type='btn'>Lat Pulldown</button></td>
+                  <td><button type='btn'>Hammer Curl</button></td>
+                  <td><button type='btn'>Skull Crusher</button></td>
+                  <td><button type='btn'>Cable Oblique Twist</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Romanian Deadlift</button></td>
+                  <td><button type='btn'>Dumbell Incline Press</button></td>
+                  <td><button type='btn'>Rear Pec Deck</button></td>
+                  <td><button type='btn'>Seated Cable Row</button></td>
+                  <td></td>
+                  <td><button type='btn'>Overhead Tricep Extension</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Leg Press</button></td>
+                  <td><button type='btn'>Push Up</button></td>
+                  <td><button type='btn'>Face Pull</button></td>
+                  <td><button type='btn'>Dumbell Row</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Lunges</button></td>
+                  <td></td>
+                  <td></td>
+                  <td><button type='btn'>Back Extension</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Leg Extension</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Leg Curl</button></td>
+                </tr>
+                <tr>
+                  <td><button type='btn'>Calf Raise</button></td>
+                </tr>
+              </table>
+            </div>
 
-    $(document).ready(function () {
-        $('.tabs').tabs();
-      });
-  </script>
+            <div id="custom3" class="col s12 textWhite">TEST 2!!?!!</div>
+          </div>
+          <div class="modal-footer" style="background-color:#2a3f58">
+            <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+          </div>
+        </div>
+
+        <!-- THU MODAL -->
+        <!--    V      -->
+
+        <div class="modal modalStyle" id="modalThursday">
+          <h4 class="center-align textWhite">What workouts are we doing this Monday?</h4>
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+                <li class="tab col s3" style="min-width:50%"><a href="#premade4">Suggested Workouts</a></li>
+                <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom4">Custom Workouts</a></li>
+              </ul>
+            </div>
+
+              <div id="premade4" class="col s12 textWhite">
+                <table>
+                  <tr>
+                    <th>Legs</th>
+                    <th>Chest</th>
+                    <th>Shoulders</th>
+                    <th>Back</th>
+                    <th>Biceps</th>
+                    <th>Triceps</th>
+                    <th>Core</th>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Back Squat</button></td>
+                    <td><button type='btn'>Bench Press</button></td>
+                    <td><button type='btn'>Overhead Press</button></td>
+                    <td><button type='btn'>Deadlift</button></td>
+                    <td><button type='btn'>Barbell Curl</button></td>
+                    <td><button type='btn'>Dips</button></td>
+                    <td><button type='btn'>Ab Wheel</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Front Squat</button></td>
+                    <td><button type='btn'>Incline Bench Press</button></td>
+                    <td><button type='btn'>Seated Dumbell Press</button></td>
+                    <td><button type='btn'>Barbell Row</button></td>
+                    <td><button type='btn'>Dumbell Curl</button></td>
+                    <td><button type='btn'>Tricep Pushdown</button></td>
+                    <td><button type='btn'>Hanging Leg Raise</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Goblet Squat</button></td>
+                    <td><button type='btn'>Dumbll Bench Press</button></td>
+                    <td><button type='btn'>Lateral Raise</button></td>
+                    <td><button type='btn'>Lat Pulldown</button></td>
+                    <td><button type='btn'>Hammer Curl</button></td>
+                    <td><button type='btn'>Skull Crusher</button></td>
+                    <td><button type='btn'>Cable Oblique Twist</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Romanian Deadlift</button></td>
+                    <td><button type='btn'>Dumbell Incline Press</button></td>
+                    <td><button type='btn'>Rear Pec Deck</button></td>
+                    <td><button type='btn'>Seated Cable Row</button></td>
+                    <td></td>
+                    <td><button type='btn'>Overhead Tricep Extension</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Leg Press</button></td>
+                    <td><button type='btn'>Push Up</button></td>
+                    <td><button type='btn'>Face Pull</button></td>
+                    <td><button type='btn'>Dumbell Row</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Lunges</button></td>
+                    <td></td>
+                    <td></td>
+                    <td><button type='btn'>Back Extension</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Leg Extension</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Leg Curl</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type='btn'>Calf Raise</button></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div id="custom4" class="col s12 textWhite">TEST 2!!?!!</div>
+            </div>
+            <div class="modal-footer" style="background-color:#2a3f58">
+              <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+            </div>
+          </div>
+
+          <!-- FRI MODAL -->
+          <!--    V      -->
+
+          <div class="modal modalStyle" id="modalFriday">
+            <h4 class="center-align textWhite">What workouts are we doing this Monday?</h4>
+            <div class="row">
+              <div class="col s12">
+                <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+                  <li class="tab col s3" style="min-width:50%"><a href="#premade5">Suggested Workouts</a></li>
+                  <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom5">Custom Workouts</a>
+                  </li>
+                </ul>
+              </div>
+
+                <div id="premade5" class="col s12 textWhite">
+                  <table>
+                    <tr>
+                      <th>Legs</th>
+                      <th>Chest</th>
+                      <th>Shoulders</th>
+                      <th>Back</th>
+                      <th>Biceps</th>
+                      <th>Triceps</th>
+                      <th>Core</th>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Back Squat</button></td>
+                      <td><button type='btn'>Bench Press</button></td>
+                      <td><button type='btn'>Overhead Press</button></td>
+                      <td><button type='btn'>Deadlift</button></td>
+                      <td><button type='btn'>Barbell Curl</button></td>
+                      <td><button type='btn'>Dips</button></td>
+                      <td><button type='btn'>Ab Wheel</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Front Squat</button></td>
+                      <td><button type='btn'>Incline Bench Press</button></td>
+                      <td><button type='btn'>Seated Dumbell Press</button></td>
+                      <td><button type='btn'>Barbell Row</button></td>
+                      <td><button type='btn'>Dumbell Curl</button></td>
+                      <td><button type='btn'>Tricep Pushdown</button></td>
+                      <td><button type='btn'>Hanging Leg Raise</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Goblet Squat</button></td>
+                      <td><button type='btn'>Dumbll Bench Press</button></td>
+                      <td><button type='btn'>Lateral Raise</button></td>
+                      <td><button type='btn'>Lat Pulldown</button></td>
+                      <td><button type='btn'>Hammer Curl</button></td>
+                      <td><button type='btn'>Skull Crusher</button></td>
+                      <td><button type='btn'>Cable Oblique Twist</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Romanian Deadlift</button></td>
+                      <td><button type='btn'>Dumbell Incline Press</button></td>
+                      <td><button type='btn'>Rear Pec Deck</button></td>
+                      <td><button type='btn'>Seated Cable Row</button></td>
+                      <td></td>
+                      <td><button type='btn'>Overhead Tricep Extension</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Leg Press</button></td>
+                      <td><button type='btn'>Push Up</button></td>
+                      <td><button type='btn'>Face Pull</button></td>
+                      <td><button type='btn'>Dumbell Row</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Lunges</button></td>
+                      <td></td>
+                      <td></td>
+                      <td><button type='btn'>Back Extension</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Leg Extension</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Leg Curl</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type='btn'>Calf Raise</button></td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div id="custom5" class="col s12 textWhite">TEST 2!!?!!</div>
+              </div>
+              <div class="modal-footer" style="background-color:#2a3f58">
+                <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+              </div>
+            </div>
+
+            <!-- SAT MODAL -->
+            <!--     V     -->
+
+            <div class="modal modalStyle" id="modalSaturday">
+              <h4 class="center-align textWhite">What workouts are we doing this Monday?</h4>
+              <div class="row">
+                <div class="col s12">
+                  <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+                    <li class="tab col s3" style="min-width:50%"><a href="#premade6">Suggested Workouts</a></li>
+                    <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom6">Custom Workouts</a>
+                    </li>
+                  </ul>
+                </div>
+
+                  <div id="premade6" class="col s12 textWhite">
+                    <table>
+                      <tr>
+                        <th>Legs</th>
+                        <th>Chest</th>
+                        <th>Shoulders</th>
+                        <th>Back</th>
+                        <th>Biceps</th>
+                        <th>Triceps</th>
+                        <th>Core</th>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Back Squat</button></td>
+                        <td><button type='btn'>Bench Press</button></td>
+                        <td><button type='btn'>Overhead Press</button></td>
+                        <td><button type='btn'>Deadlift</button></td>
+                        <td><button type='btn'>Barbell Curl</button></td>
+                        <td><button type='btn'>Dips</button></td>
+                        <td><button type='btn'>Ab Wheel</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Front Squat</button></td>
+                        <td><button type='btn'>Incline Bench Press</button></td>
+                        <td><button type='btn'>Seated Dumbell Press</button></td>
+                        <td><button type='btn'>Barbell Row</button></td>
+                        <td><button type='btn'>Dumbell Curl</button></td>
+                        <td><button type='btn'>Tricep Pushdown</button></td>
+                        <td><button type='btn'>Hanging Leg Raise</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Goblet Squat</button></td>
+                        <td><button type='btn'>Dumbll Bench Press</button></td>
+                        <td><button type='btn'>Lateral Raise</button></td>
+                        <td><button type='btn'>Lat Pulldown</button></td>
+                        <td><button type='btn'>Hammer Curl</button></td>
+                        <td><button type='btn'>Skull Crusher</button></td>
+                        <td><button type='btn'>Cable Oblique Twist</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Romanian Deadlift</button></td>
+                        <td><button type='btn'>Dumbell Incline Press</button></td>
+                        <td><button type='btn'>Rear Pec Deck</button></td>
+                        <td><button type='btn'>Seated Cable Row</button></td>
+                        <td></td>
+                        <td><button type='btn'>Overhead Tricep Extension</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Leg Press</button></td>
+                        <td><button type='btn'>Push Up</button></td>
+                        <td><button type='btn'>Face Pull</button></td>
+                        <td><button type='btn'>Dumbell Row</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Lunges</button></td>
+                        <td></td>
+                        <td></td>
+                        <td><button type='btn'>Back Extension</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Leg Extension</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Leg Curl</button></td>
+                      </tr>
+                      <tr>
+                        <td><button type='btn'>Calf Raise</button></td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div id="custom6" class="col s12 textWhite">TEST 2!!?!!</div>
+                </div>
+                <div class="modal-footer" style="background-color:#2a3f58">
+                  <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+                </div>
+              </div>
+
+              <!-- SUNDAY MODAL -->
+              <!--       V      -->
+
+              <div class="modal modalStyle" id="modalSunday">
+                <h4 class="center-align textWhite">What workouts are we doing this Monday?</h4>
+                <div class="row">
+                  <div class="col s12">
+                    <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+                      <li class="tab col s3" style="min-width:50%"><a href="#premade7">Suggested Workouts</a></li>
+                      <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom7">Custom Workouts</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                    <div id="premade7" class="col s12 textWhite">
+                      <table>
+                        <tr>
+                          <th>Legs</th>
+                          <th>Chest</th>
+                          <th>Shoulders</th>
+                          <th>Back</th>
+                          <th>Biceps</th>
+                          <th>Triceps</th>
+                          <th>Core</th>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Back Squat</button></td>
+                          <td><button type='btn'>Bench Press</button></td>
+                          <td><button type='btn'>Overhead Press</button></td>
+                          <td><button type='btn'>Deadlift</button></td>
+                          <td><button type='btn'>Barbell Curl</button></td>
+                          <td><button type='btn'>Dips</button></td>
+                          <td><button type='btn'>Ab Wheel</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Front Squat</button></td>
+                          <td><button type='btn'>Incline Bench Press</button></td>
+                          <td><button type='btn'>Seated Dumbell Press</button></td>
+                          <td><button type='btn'>Barbell Row</button></td>
+                          <td><button type='btn'>Dumbell Curl</button></td>
+                          <td><button type='btn'>Tricep Pushdown</button></td>
+                          <td><button type='btn'>Hanging Leg Raise</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Goblet Squat</button></td>
+                          <td><button type='btn'>Dumbll Bench Press</button></td>
+                          <td><button type='btn'>Lateral Raise</button></td>
+                          <td><button type='btn'>Lat Pulldown</button></td>
+                          <td><button type='btn'>Hammer Curl</button></td>
+                          <td><button type='btn'>Skull Crusher</button></td>
+                          <td><button type='btn'>Cable Oblique Twist</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Romanian Deadlift</button></td>
+                          <td><button type='btn'>Dumbell Incline Press</button></td>
+                          <td><button type='btn'>Rear Pec Deck</button></td>
+                          <td><button type='btn'>Seated Cable Row</button></td>
+                          <td></td>
+                          <td><button type='btn'>Overhead Tricep Extension</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Leg Press</button></td>
+                          <td><button type='btn'>Push Up</button></td>
+                          <td><button type='btn'>Face Pull</button></td>
+                          <td><button type='btn'>Dumbell Row</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Lunges</button></td>
+                          <td></td>
+                          <td></td>
+                          <td><button type='btn'>Back Extension</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Leg Extension</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Leg Curl</button></td>
+                        </tr>
+                        <tr>
+                          <td><button type='btn'>Calf Raise</button></td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div id="custom7" class="col s12 textWhite">TEST 2!!?!!</div>
+                  </div>
+                  <div class="modal-footer" style="background-color:#2a3f58">
+                    <a href="./calendar.html" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+                  </div>
+                </div>
+
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+                <script>
+                  $(document).ready(function () {
+                    $('.modal').modal();
+                  });
+
+                  $(document).ready(function () {
+                    $('.tabs').tabs();
+                  });
+                </script>
 </body>
 
 </html>
