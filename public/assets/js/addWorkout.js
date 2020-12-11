@@ -1,9 +1,3 @@
-let workouts = JSON.parse(localStorage.getItem('fitness_edge_custom_workouts'))
-if (!workouts) {
-  workouts = []
-  localStorage.setItem('fitness_edge_custom_workouts', JSON.stringify(workouts))
-}
-
 const validateAddWorkout = ({ title, muscle, sets, reps, weight }) => {
   if (title === '') {
     return false
@@ -47,7 +41,13 @@ document.getElementById('addWorkout').addEventListener('click', event => {
   }
 
   if (validateAddWorkout(workout)) {
-    workouts.push(workout)
+    console.log(workout)
+    let workouts = getWorkouts()
+    if (!workouts.length) {
+      workouts.push({ id: 0, workout: workout, ...workout })
+    } else {
+      workouts.push({ id: workouts[workouts.length - 1].id + 1, workout: workout, ...workout })
+    }
     localStorage.setItem('fitness_edge_custom_workouts', JSON.stringify(workouts))
     document.getElementById('title').value = ''
     document.getElementById('muscle').value = ''
@@ -75,7 +75,8 @@ document.getElementById('addWorkout').addEventListener('click', event => {
   }
 })
 
-let list = workouts.map(({ title, muscle, sets, reps, weight, description }) => {
+let workouts = getWorkouts()
+let list = workouts.map(({ id, title, muscle, sets, reps, weight, description }) => {
   let htmlText = `
       <li>
       <p>Title: ${title}</p>
@@ -92,7 +93,10 @@ let list = workouts.map(({ title, muscle, sets, reps, weight, description }) => 
         <label>Description:</label> 
         <p>${description}</p>`
   }
-  htmlText += '</li>'
+
+  htmlText += `
+    <button type="button" class="deleteWorkout" data-id="${id}">Delete</button>
+  </li>`
 
   return htmlText
 })
