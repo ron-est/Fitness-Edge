@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Fitness Edge - Home</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="./assets/css/base.css">
+</head>
+
+<body>
+ <nav class="navf z-depth-5">
+  <div class="nav-wrapper">
+   <a href="#" class="brand-logo"><img
+     src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+   </a>
+   <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <li><a class="white-text" href="./index.html">Home</a></li>
+    <li><a class="white-text" href="./calendar.html">Calendar</a></li>
+    <li><a class="white-text" href="./about.html">About</a></li>
+   </ul>
+  </div>
+ </nav>
+ <!-- navbar ends -->
+
+
+ <!-- page content starts -->
+ <div class="parallax-container">
+  <div class="parallax"><img src="./assets/img/workout.jpg"></div>
+ </div>
+ <div class="section bodybg">
+  <div class="row container center-align">
+   <h3 class="header white-text center-align">
+    <strong>
+     The workout planner made for you.
+    </strong>
+   </h3>
+   <div class="container white-text">
+    <div class="row">
+     <div class="col s12 m4">
+      <i class="large material-icons">check_circle</i>
+      <h5>
+       <strong>Ready to use</strong>
+      </h5>
+      <h6>
+       With our workout planner you'll have access to our library of
+       effective exercises and be able to plan out your whole week of fitness.
+      </h6>
+     </div>
+     <div class="col s12 m4">
+      <i class="large material-icons">settings</i>
+      <h5>
+       <strong>Customizable</strong>
+      </h5>
+      <h6>
+       Pre-designed templates can point you in the right direction
+       while more advanced fitness enthusiasts can customize their workout to fit
+       their specific goal.
+      </h6>
+     </div>
+     <div class="col s12 m4">
+      <i class="large material-icons">phonelink</i>
+      <h5>
+       <strong>Responsive</strong>
+      </h5>
+      <h6>
+       Fully responsive website works great on any size device from smartphones to desktop PC, making it fast and easy,
+       taking less of your valuable time.
+      </h6>
+     </div>
+    </div>
+   </div>
+   <!-- link to calendar -->
+   <a class="waves-effect waves-light btn z-depth-3 start" href="./calendar.html">Start Here</a>
+   <!-- . -->
+  </div>
+ </div>
+ </div>
+ <div class="parallax-container">
+  <div class="parallax"><img src="./assets/img/weightRack.jpg"></div>
+ </div>
+ <!-- page content ends -->
+
+
+ <!-- footer starts -->
+ <footer class="navf z-depth-5">
+  <div class="container">
+   <div class="row">
+    <div class="col l6 s12">
+     <h5 class="white-text">Footer Content</h5>
+     <p class="white-text">You can use rows and columns here to organize your footer content.</p>
+    </div>
+    <div class="col l4 offset-l2 s12">
+     <h5 class="white-text">Links</h5>
+     <ul>
+      <li><a class="white-text" href="#!">Link 1</a></li>
+      <li><a class="white-text" href="#!">Link 2</a></li>
+      <li><a class="white-text" href="#!">Link 3</a></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div class="footer-copyright">
+   <div class="container white-text">
+    © 2020 Copyright Text
+    <a class="white-text right" href="#!">More Links</a>
+   </div>
+  </div>
+ </footer>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+   const parallaxEffect = document.querySelectorAll('.parallax');
+   M.Parallax.init(parallaxEffect, {});
+  });
+ </script>
+</body>
+
+</html>
