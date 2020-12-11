@@ -7,6 +7,7 @@
   <title>Fitness Edge - Contact</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <style>
     #images {
       height: 100%;
@@ -65,21 +66,40 @@
 <!-- https://dewey.tailorbrands.com/production/brand_version_mockup_image/720/4267272720_53195123-8bba-4e88-a023-1477f03b6c93.png?cb=1607542101 -->
 
 <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper" style="background-color: #121c25;">
-        <a href="#" class="brand-logo"><img
-            src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180'>
+  <nav class="navf z-depth-3">
+    <div class="nav-wrapper">
+      <!-- menu icon -->
+      <a href="#" data-target="slide-out" class="sidenav-trigger side"><i class="material-icons">menu</i></a>
+  
+      <div class="container">
+        <!-- logo -->
+        <a href="index.html" class="brand-logo hide-on-med-and-down"><img
+            src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
         </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./calendar.html">Calender</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+        <a href="index.html" class="brand-logo hide-on-large-and-up"><img class="responsive-img"
+            src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+        </a>
+  
+        <!-- upper right nav -->
+        <ul class="right hide-on-med-and-down right">
+          <li class="active"><a class="white-text" href="./index.html">Home</a></li>
+          <li><a class="white-text" href="./calendar.html">Calendar</a></li>
+          <li><a class="white-text" href="./contact.html">Contact</a></li>
         </ul>
       </div>
-    </nav>
-  </div>
+  
+    </div>
+  </nav>
+  <!-- side nav -->
+  <ul id="slide-out" class="sidenav">
+    <li class="active"><a class="white-text" href="./index.html"><i class="material-icons white-text">home</i>Home</a>
+    </li>
+    <li><a class="white-text" href="./calendar.html"><i class="material-icons white-text">date_range</i>Calendar</a>
+    </li>
+    <li><a class="white-text" href="./contact.html"><i class="material-icons white-text">email</i>Contact</a></li>
+  </ul>
+  
+  <!-- navbar ends -->
 
   <h5 class="textWhite">Here you will find the Github accounts and Linkedin profiles of the members who worked on this
     site.</h5>
@@ -93,10 +113,12 @@
       </div>
       <div class="card-content textWhite">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequatur quo impedit voluptatum at voluptatem
-          commodi delectus doloribus earum. Libero adipisci similique impedit deserunt error totam modi sint. sflsdhshsnfjsisibssksdbdbsd
-        sivnossnvinssisoisf </p>
+          commodi delectus doloribus earum. Libero adipisci similique impedit deserunt error totam modi sint.
+          sflsdhshsnfjsisibssksdbdbsd
+          sivnossnvinssisoisf </p>
         <a class="waves-effect waves-light btn red" href="https://github.com/ron-est" target="_blank">Github</a>
-        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/ronald-esteban-1523901b6/" target="_blank">Linkedin</a>
+        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/ronald-esteban-1523901b6/"
+          target="_blank">Linkedin</a>
       </div>
     </div>
     </p>
@@ -112,7 +134,8 @@
           Unde maxime fugit quia debitis odio veritatis magnam aperiam error beatae enim exercitationem a explicabo
           praesentium, cum impedit. </p>
         <a class="waves-effect waves-light btn red" href="https://github.com/RichardMShaw" target="_blank">Github</a>
-        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/richard-morgan-shaw/" target="_blank">Linkedin</a>
+        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/richard-morgan-shaw/"
+          target="_blank">Linkedin</a>
       </div>
     </div>
     </p>
@@ -130,7 +153,8 @@
           veritatis voluptatum sapiente dolores eius eveniet sunt nam, praesentium consequuntur quae expedita. Eaque quo
           expedita possimus id!</p>
         <a class="waves-effect waves-light btn red" href="https://github.com/nickdmrco" target="_blank">Github</a>
-        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/nicholas-de-marco-344418190/" target="_blank">Linkedin</a>
+        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/nicholas-de-marco-344418190/"
+          target="_blank">Linkedin</a>
       </div>
     </div>
     </p>
@@ -147,7 +171,8 @@
           repellat maxime nam! Assumenda eveniet dolor minima nesciunt sapiente consequuntur mollitia, cupiditate,
           excepturi rerum ullam qui? Illo, consequuntur.</p>
         <a class="waves-effect waves-light btn red" href="https://github.com/CeliaNoriega" target="_blank">Github</a>
-        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/celia-noriega-0b30611b9/" target="_blank">Linkedin</a>
+        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/celia-noriega-0b30611b9/"
+          target="_blank">Linkedin</a>
       </div>
     </div>
     </p>
@@ -163,7 +188,8 @@
           corrupti! Quasi aperiam saepe amet assumenda, nisi praesentium, odit recusandae corporis soluta eos, quam
           delectus placeat maxime.</p>
         <a class="waves-effect waves-light btn red" href="https://github.com/isaiahant" target="_blank">Github</a>
-        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/isaiah-anthony-23b3391b3/" target="_blank">Linkedin</a>
+        <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/isaiah-anthony-23b3391b3/"
+          target="_blank">Linkedin</a>
       </div>
     </div>
     </p>
@@ -174,6 +200,13 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      //SIDENAV init
+      document.addEventListener('DOMContentLoaded', () => {
+        const slide = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(slide, {});
+      });
+    </script>
 
 </body>
 

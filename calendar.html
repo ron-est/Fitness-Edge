@@ -7,6 +7,7 @@
   <title>Fitness Edge - Calendar</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
   <style>
     #images {
@@ -51,7 +52,7 @@
       padding-top: 5px;
       border-spacing: 0px;
       align-self: center;
-      color:white;
+      color: white;
     }
 
     .btn {
@@ -80,19 +81,41 @@
 
 <body>
   <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper" style="background-color: #121c25;">
-        <a href="#" class="brand-logo"><img
-            src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180'>
-        </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./calendar.html">Calendar</a></li>
-          <li><a href="./about.html">About</a></li>
-        </ul>
+    <nav class="navf z-depth-3">
+      <div class="nav-wrapper">
+        <!-- menu icon -->
+        <a href="#" data-target="slide-out" class="sidenav-trigger side"><i class="material-icons">menu</i></a>
+
+        <div class="container">
+          <!-- logo -->
+          <a href="index.html" class="brand-logo hide-on-med-and-down"><img
+              src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+          </a>
+          <a href="index.html" class="brand-logo hide-on-large-and-up"><img class="responsive-img"
+              src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+          </a>
+
+          <!-- upper right nav -->
+          <ul class="right hide-on-med-and-down right">
+            <li class="active"><a class="white-text" href="./index.html">Home</a></li>
+            <li><a class="white-text" href="./calendar.html">Calendar</a></li>
+            <li><a class="white-text" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
       </div>
     </nav>
   </div>
+  <!-- side nav -->
+  <ul id="slide-out" class="sidenav">
+    <li class="active"><a class="white-text" href="./index.html"><i class="material-icons white-text">home</i>Home</a>
+    </li>
+    <li><a class="white-text" href="./calendar.html"><i class="material-icons white-text">date_range</i>Calendar</a>
+    </li>
+    <li><a class="white-text" href="./contact.html"><i class="material-icons white-text">email</i>Contact</a></li>
+  </ul>
+
+  <!-- navbar ends -->
 
   <h5 class="textWhite">To get started, click on the plus icon in the bottom right corner of the day you would like to
     select a workout.</h5>
@@ -225,7 +248,7 @@
       </div>
 
       <div id="premade1" class="col s12 textWhite">
-        <table >
+        <table>
           <tr>
             <th>Legs</th>
             <th>Chest</th>
@@ -855,6 +878,13 @@
     $(document).ready(function () {
       $('.tabs').tabs();
     });
+
+    //SIDENAV init
+    document.addEventListener('DOMContentLoaded', () => {
+      const slide = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(slide, {});
+    });
+
   </script>
 </body>
 
