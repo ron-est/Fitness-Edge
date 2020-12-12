@@ -75,30 +75,30 @@ document.getElementById('addWorkout').addEventListener('click', event => {
   }
 })
 
-let workouts = getWorkouts()
-let list = workouts.map(({ id, title, muscle, sets, reps, weight, description }) => {
-  let htmlText = `
-      <li>
-      <p>Title: ${title}</p>
-      <p>Muscle: ${muscle}</p>
-      <p>Sets: ${sets}</p>
-      <p>Reps: ${reps}</p>
-      `
+// let workouts = getWorkouts()
+// let list = workouts.map(({ id, title, muscle, sets, reps, weight, description }) => {
+//   let htmlText = `
+//       <li>
+//       <p>Title: ${title}</p>
+//       <p>Muscle: ${muscle}</p>
+//       <p>Sets: ${sets}</p>
+//       <p>Reps: ${reps}</p>
+//       `
 
-  if (weight) {
-    htmlText += `<p>Weight: ${weight}</p>`
-  }
-  if (description) {
-    htmlText += `
-        <label>Description:</label> 
-        <p>${description}</p>`
-  }
+//   if (weight) {
+//     htmlText += `<p>Weight: ${weight}</p>`
+//   }
+//   if (description) {
+//     htmlText += `
+//         <label>Description:</label> 
+//         <p>${description}</p>`
+//   }
 
-  htmlText += `
-    <button type="button" class="deleteWorkout" data-id="${id}">Delete</button>
-  </li>`
+//   htmlText += `
+//     <button type="button" class="deleteWorkout" data-id="${id}">Delete</button>
+//   </li>`
 
-  return htmlText
-})
+//   return htmlText
+// })
 
-document.getElementById('customWorkouts').innerHTML = list.join('')
+// document.getElementById('customWorkouts').innerHTML = list.join('')

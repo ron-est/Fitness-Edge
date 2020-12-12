@@ -7,91 +7,31 @@ const localDataInit = () => {
     localStorage.setItem('fitness_edge_custom_workouts', JSON.stringify([]))
   }
 
-  let regime = JSON.parse(localStorage.getItem('fitness_edge_weekly_regime'))
-  if (!regime) {
-    regime = [
-      [
-        {
-          title: "Test",
-          muscle: "Test",
-          sets: 0,
-          reps: "Test",
-          weight: 0,
-          description: "Test"
-        }
-      ],
-      [
-        {
-          title: "Test",
-          muscle: "Test",
-          sets: 0,
-          reps: "Test",
-          weight: 0,
-          description: "Test"
-        }
-      ],
-      [
-        {
-          title: "Test",
-          muscle: "Test",
-          sets: 0,
-          reps: "Test",
-          weight: 0,
-          description: "Test"
-        }
-      ],
-      [
-        {
-          title: "Test",
-          muscle: "Test",
-          sets: 0,
-          reps: "Test",
-          weight: 0,
-          description: "Test"
-        }
-      ],
-      [
-        {
-          title: "Test",
-          muscle: "Test",
-          sets: 0,
-          reps: "Test",
-          weight: 0,
-          description: "Test"
-        }
-      ],
-      [
-        {
-          title: "Test",
-          muscle: "Test",
-          sets: 0,
-          reps: "Test",
-          weight: 0,
-          description: "Test"
-        }
-      ],
-      [
-        {
-          title: "Test",
-          muscle: "Test",
-          sets: 0,
-          reps: "Test",
-          weight: 0,
-          description: "Test"
-        }
-      ]
-    ]
+  let routines = JSON.parse(localStorage.getItem('fitness_edge_weekly_routines'))
+  if (!routines) {
+    let routines = {
+      monday: [],
+      tuesday: [],
+      wednesday: [],
+      thursday: [],
+      friday: [],
+      saturday: [],
+      sunday: []
+    }
 
-    localStorage.setItem('fitness_edge_weekly_regime', JSON.stringify(regime))
+    localStorage.setItem('fitness_edge_weekly_routines', JSON.stringify(routines))
   }
 }
 
-const getWorkouts = () => {
+const getCustomWorkouts = () => {
   return JSON.parse(localStorage.getItem('fitness_edge_custom_workouts'))
 }
 
-const getRegime = () => {
-  return JSON.parse(localStorage.getItem('fitness_edge_weekly_regime'))
+const setRoutines = (routines) => {
+  localStorage.setItem('fitness_edge_weekly_routines', JSON.stringify(routines))
+}
+const getRoutines = () => {
+  return JSON.parse(localStorage.getItem('fitness_edge_weekly_routines'))
 }
 
 localDataInit()

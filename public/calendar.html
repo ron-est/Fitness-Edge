@@ -53,7 +53,7 @@
     }
 
     td {
-      padding:1rem;
+      padding: 1rem;
       border-spacing: 0px;
       text-align: center;
       color: white;
@@ -132,21 +132,19 @@
         <span class="card-title grey-text text-darken-4 center-align">
           <h4 class="textWhite">Monday</h4>
         </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="monday">add</i></a>
       </div>
-      <div id="mondayContent" class="card-content textWhite">
-
+      <div class="card-content textWhite" id="mondayRoutine">
         <!-- USE AS TEMPLATE FOR INSERTED CARD -->
         <div class="card hoverable wrkotCard">
           <h6 class="truncate wrkotTitle "><a class="halfway-fab waves-effect waves-light modal-trigger"
-              href="#modal"><i class="material-icons" data-day="Monday" data-i="0">fitness_center</i></a></a>Big Gain
+              href="#modal"><i class="material-icons editWorkout" data-day="monday" data-index="0">fitness_center</i></a></a>Big Gain
             Triceps(custom)</h6>
           <p>Reps: 7,000 reps</p>
           <p>Weight: 80,000 Lbs</p>
         </div>
         <!--------------------------------------->
-
-        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
-            class="material-icons" data-day="Monday">add</i></a>
       </div>
     </div>
 
@@ -156,13 +154,10 @@
         <span class="card-title grey-text text-darken-4 center-align">
           <h4 class="textWhite">Tuesday</h4>
         </span>
-      </div>
-      <div class="card-content">
-        <p class="textWhite">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam a temporibus explicabo?
-          Unde maxime fugit quia debitis odio veritatis magnam aperiam error beatae enim exercitationem a explicabo
-          praesentium, cum impedit. </p>
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
-            class="material-icons" data-day="Tuesday">add</i></a>
+            class="material-icons addWorkout" data-day="tuesday">add</i></a>
+      </div>
+      <div class="card-content" id="tuesdayRoutine">
       </div>
     </div>
 
@@ -174,12 +169,9 @@
           <h4 class="textWhite">Wednesday</h4>
         </span>
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
-            class="material-icons" data-day="Wednesday">add</i></a>
+            class="material-icons addWorkout" data-day="wednesday">add</i></a>
       </div>
-      <div class="card-content">
-        <p class="textWhite">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam tempora voluptas autem, eum
-          veritatis voluptatum sapiente dolores eius eveniet sunt nam, praesentium consequuntur quae expedita. Eaque quo
-          expedita possimus id!</p>
+      <div class="card-content" id="wednesdayRoutine">
       </div>
     </div>
 
@@ -190,12 +182,9 @@
           <h4 class="textWhite">Thursday</h4>
         </span>
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
-            class="material-icons" data-day="Thursday">add</i></a>
+            class="material-icons addWorkout" data-day="thursday">add</i></a>
       </div>
-      <div class="card-content">
-        <p class="textWhite">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae veniam, minus aliquam
-          repellat maxime nam! Assumenda eveniet dolor minima nesciunt sapiente consequuntur mollitia, cupiditate,
-          excepturi rerum ullam qui? Illo, consequuntur.</p>
+      <div class="card-content" id="thursdayRoutine">
       </div>
     </div>
 
@@ -206,12 +195,9 @@
           <h4 class="textWhite">Friday</h4>
         </span>
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
-            class="material-icons" data-day="Friday">add</i></a>
+            class="material-icons addWorkout" data-day="friday">add</i></a>
       </div>
-      <div class="card-content">
-        <p class="textWhite">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum cum odio hic voluptatem
-          corrupti! Quasi aperiam saepe amet assumenda, nisi praesentium, odit recusandae corporis soluta eos, quam
-          delectus placeat maxime.</p>
+      <div class="card-content" id="fridayRoutine">
       </div>
     </div>
 
@@ -221,13 +207,10 @@
         <span class="card-title grey-text text-darken-4 center-align">
           <h4 class="textWhite">Saturday</h4>
         </span>
-      </div>
-      <div class="card-content">
-        <p class="textWhite">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ex neque eligendi cumque
-          quas ullam modi, sequi alias voluptates non, architecto mollitia. Fugiat odio ex voluptatum omnis nisi, veniam
-          quia.</p>
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
-            class="material-icons" data-day="Saturday">add</i></a>
+            class="material-icons addWorkout" data-day="saturday">add</i></a>
+      </div>
+      <div class="card-content" id="saturdayRoutine">
       </div>
     </div>
 
@@ -239,12 +222,9 @@
           <h4 class="textWhite">Sunday</h4>
         </span>
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
-            class="material-icons" data-day="Sunday">add</i></a>
+            class="material-icons addWorkout" data-day="sunday">add</i></a>
       </div>
-      <div class="card-content">
-        <p class="textWhite">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, dignissimos. Dolorum
-          obcaecati necessitatibus tempore dolores voluptatem ut tempora praesentium numquam quae? Commodi, laboriosam
-          nihil sint illum error vel ea impedit.</p>
+      <div class="card-content" id="sundayRoutine">
       </div>
     </div>
   </div>
@@ -252,7 +232,7 @@
   <!-- MON MODAL -->
   <!--    V      -->
 
-  <div class="modal modalStyle" id="modal">
+  <div class="modal modalStyle" id="modal" data-day="monday" data-index="-1">
     <h4 class="center-align textWhite" id="modalTitle">What workouts are we doing this { day }?</h4>
     <div class="row">
       <div class="col s12">
@@ -292,7 +272,7 @@
           <input type="text" id="description" name="description">
           <p>* Required</p>
           <p>
-            <button type="button" id="addCustom" data-day="monday" data-index="-1">Save
+            <button type="button" id="addCustomToRoutine" data-day="monday" data-index="-1">Save
               <p id="warning"></p>
           </p>
         </form>
@@ -315,8 +295,11 @@
       $('.tabs').tabs();
     });
   </script>
+  <script src="./assets/js/localdata.js"></script>
   <script src="./assets/js/click.js"></script>
   <script src="./assets/js/premadeTableRender.js"></script>
+  <script src="assets/js/addCustomToRoutine.js"></script>
+  <script src="assets/js/displayRegime.js"></script>
 </body>
 
 </html>

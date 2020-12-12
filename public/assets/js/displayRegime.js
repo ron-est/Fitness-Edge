@@ -1,63 +1,37 @@
-let weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+const displayRoutineInit = () => {
 
-const displayRegimeInit = () => {
-
-  let regime = getRegime()
-  let workouts = getWorkouts()
-  regime.forEach((workouts, i) => {
-    let list = workouts.map(({ title, muscle, sets, reps, weight, description }) => {
-      let htmlText = `
-      <li>
-      <p>Title: ${title}</p>
-      <p>Muscle: ${muscle}</p>
-      <p>Sets: ${sets}</p>
-      <p>Reps: ${reps}</p>
-      `
+  let weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+  let routines = getRoutines()
+  weekdays.forEach(day => {
+    let htmlText = ''
+    let routine = routines[day]
+    routine.forEach(({ title, muscle, sets, reps, weight, description }, i) => {
+      htmlText += `
+          <div class="card hoverable wrkotCard"">
+            <h6 class="truncate wrkotTitle ">
+                <a class="halfway-fab waves-effect waves-light modal-trigger" href="#modal">
+                  <i class="material-icons editWorkout" data-day="${day}" data-index="${i}">fitness_center</i>
+                </a>
+                ${title}
+            </h6>
+            <p>Muscle: ${muscle}</p>
+            <p>Sets: ${sets}</p>
+            <p>Reps: ${reps}</p>
+          `
 
       if (weight) {
         htmlText += `<p>Weight: ${weight}</p>`
       }
       if (description) {
         htmlText += `
-        <label>Description:</label> 
-        <p>${description}</p>`
+                <label>Description:</label> 
+                <p>${description}</p>`
       }
-      htmlText += '</li>'
-
-      return htmlText
+      htmlText += '</div>'
     })
-
-    document.getElementById(weekdays[i]).innerHTML = list.join('')
+    document.getElementById(`${day}Routine`).innerHTML = htmlText
   })
+
 }
 
-displayRegimeInit()
-
-// axios.get('/api/workouts')
-//   .then(({ data }) => {
-//     console.log(data)
-//     let workouts = data.map(({ title, muscle, sets, reps, weight, description }) => {
-//       let htmlText = `
-//       <li>
-//       <p>Title: ${title}</p>
-//       <p>Muscle: ${muscle}</p>
-//       <p>Sets: ${sets}</p>
-//       <p>Reps: ${reps}</p>
-//       `
-
-//       if (weight) {
-//         htmlText += `<p>Weight: ${weight}</p>`
-//       }
-//       if (description) {
-//         htmlText += `
-//         <label>Description:</label> 
-//         <p>${description}</p>`
-//       }
-//       htmlText += '</li>'
-
-//       return htmlText
-//     })
-
-//     document.getElementById('workoutList').innerHTML = workouts.join('')
-//   })
-//   .catch(err => console.error(err))
+displayRoutineInit()
