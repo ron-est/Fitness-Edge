@@ -8,24 +8,6 @@ main {
   flex: 1 0 auto;
 }
 
-/* PARALLAX height and responsive width */
-
-.parallax-container {
-  height: 350px;
-}
-
-@media only screen and (max-width: 992px) {
-  .parallax img {
-    max-height: 130%;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  .parallax img {
-    max-height: 170%;
-  }
-}
-
 /* THEME navbar&footer + sidenav */
 
 .navf, .sidenav {

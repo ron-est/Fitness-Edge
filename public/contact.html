@@ -14,13 +14,6 @@
       width: 100%
     }
 
-    .page-footer {
-      position: absolute;
-      bottom: 0px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
     #cal {
       scroll-snap-type: x mandatory;
       white-space: nowrap;
@@ -58,7 +51,6 @@
 
       }
     }
-
   </style>
 </head>
 
@@ -97,7 +89,8 @@
     </li>
     <li><a class="white-text" href="./calendar.html"><i class="material-icons white-text">date_range</i>Calendar</a>
     </li>
-    <li class="active"><a class="white-text" href="./contact.html"><i class="material-icons white-text">email</i>Contact</a></li>
+    <li class="active"><a class="white-text" href="./contact.html"><i
+          class="material-icons white-text">email</i>Contact</a></li>
   </ul>
 
   <!-- navbar ends -->
@@ -113,9 +106,11 @@
         </span>
       </div>
       <div class="card-content textWhite">
-        <p>Hi, my name is Ronald and I am a full-stack web developer student at UCI. My educational background is in flute
-        performance and music education at CSUF. I hope to leverage the same drive I have in music into becoming an effective
-        programmer. I like to spend a lot of my free time baking, watching anime, and riding my bikes.
+        <p>Hi, my name is Ronald and I am a full-stack web developer student at UCI. My educational background is in
+          flute
+          performance and music education at CSUF. I hope to leverage the same drive I have in music into becoming an
+          effective
+          programmer. I like to spend a lot of my free time baking, watching anime, and riding my bikes.
         </p>
         <a class="waves-effect waves-light btn red" href="https://github.com/ron-est" target="_blank">Github</a>
         <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/ronald-esteban-1523901b6/"
@@ -168,8 +163,10 @@
 
       </div>
       <div class="card-content textWhite">
-        <p class="textWhite">My name is Celia and I’m a full-stack software development student at UCI. I come from a strong background in customer service and was looking for something challenging that would point me in a new direction. One of my favorite pastimes
-        apart from coding is singing and playing the piano.</p>
+        <p class="textWhite">My name is Celia and I’m a full-stack software development student at UCI. I come from a
+          strong background in customer service and was looking for something challenging that would point me in a new
+          direction. One of my favorite pastimes
+          apart from coding is singing and playing the piano.</p>
         <a class="waves-effect waves-light btn red" href="https://github.com/CeliaNoriega" target="_blank">Github</a>
         <a class="waves-effect waves-light btn red" href="https://www.linkedin.com/in/celia-noriega-0b30611b9/"
           target="_blank">Linkedin</a>
@@ -193,20 +190,28 @@
       </div>
     </div>
     </p>
+  </div>
 
+  <!-- footer -->
+  <footer class="page-footer navf z-depth-3 hide-on-med-and-up">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 center-align">
+          <a class="white-text" href="#top">Back to top of page</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      //SIDENAV init
-      document.addEventListener('DOMContentLoaded', () => {
-        const slide = document.querySelectorAll('.sidenav');
-        M.Sidenav.init(slide, {});
-      });
-    </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    //SIDENAV init
+    document.addEventListener('DOMContentLoaded', () => {
+      const slide = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(slide, {});
+    });
+  </script>
 
 </body>
 
