@@ -2,6 +2,7 @@ let day = 'monday'
 let workoutIndex = '-1'
 let customWorkoutId = '-1'
 let premadeWorkout = {}
+let premadeRoutine = {}
 let dragStartDay = 'monday'
 let dragEndDay = 'monday'
 
@@ -28,13 +29,31 @@ const randInt = (max) => {
 
 ///Adding and Editing Custom Workouts to Routines
 
+// document.getElementById('addPremadeRoutineToDay').addEventListener('click', (event) => {
+//   let routineTemplate = document.getElementById('premadeRoutineList')
+//   let htmlText = ''
+//   premadeRoutine.workouts.forEach(({ title, muscle, sets, reps, weight, description }) => {
+//     htmlText += `
+//     <li>
+//       <div class="card z-depth-2 hoverable">
+//         <div class="card-content textWhite">
+//           <p>Title: ${title}</p>
+//           <p>Muscle: ${muscle}</p>
+//           <p>Sets: ${sets}</p>
+//           <p>Reps: ${reps}</p>
+//     `
+//     htmlText += (weight) ? `<p>Weight: ${weight}</p>` : ``
+//     htmlText += (description) ? `<p>Description: ${description}</p>` : ``
+
+//     htmlText += '</div></div></li>'
+//   })
+
+//   routineTemplate.innerHTML = htmlText
+
+// })
+
 const clearTemplateForm = () => {
-  document.getElementById('premadeMuscle').textContent = ''
-  document.getElementById('premadeTitle').textContent = ''
-  document.getElementById('premadeSets').textContent = ''
-  document.getElementById('premadeReps').textContent = ''
-  document.getElementById('premadeWeights').textContent = ''
-  document.getElementById('premadeDescription').textContent = ''
+  document.getElementById('premadeCard').textContent = ''
   document.getElementById('addPremadeToRoutine').style.display = 'none'
 }
 
@@ -160,6 +179,7 @@ document.addEventListener('click', (event) => {
         renderPremadeTemplate(premadeWorkout)
       })
       .catch(err => console.log(err))
+
   } else if (event.target.classList.contains("editWorkout")) {
     day = event.target.dataset.day
     workoutIndex = event.target.dataset.index
@@ -208,12 +228,19 @@ document.addEventListener('click', (event) => {
 
 ///Rendering Workout and Routines
 const renderPremadeTemplate = ({ title, muscle, sets, reps, weight, description }) => {
-  document.getElementById('premadeMuscle').textContent = `Muscle: ${muscle}`
-  document.getElementById('premadeTitle').textContent = `Title: ${title}`
-  document.getElementById('premadeSets').textContent = `Sets: ${sets}`
-  document.getElementById('premadeReps').textContent = `Reps: ${reps}`
-  document.getElementById('premadeWeights').textContent = (weight) ? `Weight: ${weight}` : ''
-  document.getElementById('premadeDescription').textContent = (description) ? `Description: ${description}` : ''
+  let htmlText = `
+    <h6 class="truncate wrkotTitle ">
+      ${title}
+    </h6>
+    
+    <p>Muscle: ${muscle}</p>
+    <p>Sets: ${sets}</p>
+    <p>Reps: ${reps}</p>
+    `
+  htmlText += (weight) ? `<p>Weight: ${weight}</p>` : ``
+  htmlText += (description) ? `<p>Description: ${description}</p>` : ``
+
+  document.getElementById('premadeCard').innerHTML = htmlText
   document.getElementById('addPremadeToRoutine').style.display = 'block'
 }
 
@@ -221,6 +248,7 @@ const renderPremadeWorkoutsTable = () => {
   let htmlText = document.getElementById("premadeTable").innerHTML
   axios.get('/api/workouts')
     .then(({ data }) => {
+      console.log(data)
       let types = {
         legs: [],
         chest: [],
@@ -262,13 +290,13 @@ const renderPremadeWorkoutsTable = () => {
 const renderWorkout = (day, index) => {
   let { title, muscle, sets, reps, weight, description } = getRoutines()[day][index]
   let htmlText = `
-    <h6 class="truncate wrkotTitle ">
+    <h6 class="truncate wrkotTitle">
       <a class="halfway-fab waves-effect waves-light modal-trigger" href="#modal">
         <i class="material-icons editWorkout" data-day="${day}" data-index="${index}">fitness_center</i>
       </a>
       ${title}
     </h6>
-    <p id="">Muscle: ${muscle[0].toUpperCase() + muscle.substring(1)}</p>
+    <p>Muscle: ${muscle[0].toUpperCase() + muscle.substring(1)}</p>
     <p>Sets: ${sets}</p>
     <p>Reps: ${reps}</p>
           `
@@ -296,7 +324,7 @@ const renderSingleRoutine = (day) => {
           </a>
           ${title}
         </h6>
-        <p id="">Muscle: ${muscle[0].toUpperCase() + muscle.substring(1)}</p>
+        <p>Muscle: ${muscle[0].toUpperCase() + muscle.substring(1)}</p>
         <p>Sets: ${sets}</p>
         <p>Reps: ${reps}</p>
           `

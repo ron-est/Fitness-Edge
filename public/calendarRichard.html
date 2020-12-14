@@ -122,14 +122,15 @@
       filter: alpha(opacity=20);
     }
 
-    @media screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
       #cal {
-        overflow-x: hidden;
         white-space: normal;
       }
 
-      body {
-        max-width: 100%;
+      .card {
+        width: 90%;
+        margin-left: 5%;
+        margin-right:5%;
       }
     }
   </style>
@@ -277,12 +278,11 @@
             <th>Core</th>
           </tr>
         </table>
-        <p id="premadeMuscle"></p>
-        <p id="premadeTitle"></p>
-        <p id="premadeSets"></p>
-        <p id="premadeReps"></p>
-        <p id="premadeWeights"></p>
-        <p id="premadeDescription"></p>
+        <div class="card z-depth-2 hoverable">
+          <div class="card-content textWhite wrkotCard" id="premadeCard">
+
+          </div>
+        </div>
         <button type="button" id="addPremadeToRoutine" style="display: none">Save
       </div>
 
