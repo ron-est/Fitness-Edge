@@ -238,7 +238,7 @@ const renderPremadeTemplate = ({ title, muscle, sets, reps, weight, description 
     <p>Reps: ${reps}</p>
     `
   htmlText += (weight) ? `<p>Weight: ${weight}</p>` : ``
-  htmlText += (description) ? `<p>Description: ${description}</p>` : ``
+  htmlText += (description) ? `<p>Description:</p> <p>${description}</p>` : ``
 
   document.getElementById('premadeCard').innerHTML = htmlText
   document.getElementById('addPremadeToRoutine').style.display = 'block'
@@ -308,6 +308,7 @@ const renderWorkout = (day, index) => {
                 <label>Description:</label> 
                 <p>${description}</p>`
   }
+  htmlText += `<p class="close"><i class="fas fa-trash-alt deleteWorkout" data-day="${day}" data-index="${index}"></i></p></div>`
   document.getElementById(`${day}-${index}`).innerHTML = htmlText
 }
 
@@ -336,7 +337,7 @@ const renderSingleRoutine = (day) => {
         <label>Description:</label> 
         <p>${description}</p>`
     }
-    htmlText += '</div>'
+    htmlText += `<p class="close"><i class="fas fa-trash-alt deleteWorkout" data-day="${day}" data-index="${i}"></i></p></div>`
   })
   document.getElementById(`${day}Routine`).innerHTML = htmlText
 }
