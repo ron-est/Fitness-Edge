@@ -20,7 +20,11 @@ Have you wanted to start going to the gym but don't know where to start? Achieve
 
 # Screenshots
 
- ![image](https://c4.wallpaperflare.com/wallpaper/435/960/857/birds-parrot-amazon-parrot-bird-wallpaper-preview.jpg)
+ ![image](https://i.imgur.com/LiXZB5B.png)
+ ![image](https://i.imgur.com/GY8aZnk.png)
+ ![image](https://i.imgur.com/qfOxdiK.png)
+ ![image](https://i.imgur.com/3xMvwF9.png)
+ ![image](https://i.imgur.com/Um0tNXV.png)
 
 # Contributers
 
