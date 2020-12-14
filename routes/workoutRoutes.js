@@ -7,6 +7,13 @@ router.get('/workouts', (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.get('/workouts/:id', (req, res) => {
+  Workout.findOne({ where: { id: req.param('id') } })
+    .then(workout => res.json(workout))
+    .catch(err => console.log(err))
+})
+
+
 router.post('/workouts', (req, res) => {
   Workout.create(req.body)
     .then(workout => res.json(workout))

@@ -1,7 +1,7 @@
-
 let day = 'monday'
 let workoutIndex = '-1'
 let customWorkoutId = '-1'
+let templetWorkout = {}
 
 
 const getCustomWorkouts = () => {
@@ -50,13 +50,13 @@ const renderPremadeWorkoutsTable = () => {
           len = types[muscles[i]].length
         }
       }
-      let htmlText = ''
+      let htmlText = document.getElementById("premadeTable").innerHTML
       for (let i = 0; i < len; i++) {
         htmlText += '<tr>'
         for (let j = 0; j < 7; j++) {
           if (types[muscles[j]].length > i) {
             let { id, title } = types[muscles[j]][i]
-            htmlText += `<td class="premadeWorkout z-depth-2 hoverable" data_id="${id}">${title}</td>`
+            htmlText += `<td class="premadeWorkout z-depth-2 hoverable" data-id="${id}">${title}</td>`
           } else {
             htmlText += `<td class="z-depth-2"></td>`
           }
@@ -65,6 +65,7 @@ const renderPremadeWorkoutsTable = () => {
       }
       document.getElementById("premadeTable").innerHTML = htmlText
     })
+    .catch(err => { console.error(err) })
 }
 
 ///Adding and Editing Custom Workouts to Routines
@@ -136,7 +137,7 @@ document.getElementById('addCustomToRoutine').addEventListener('click', event =>
     renderSingleRoutine(day)
 
     clearAddCustomForm()
-    $('.modal').modal().close()
+    $('.modal').modal('close')
 
   } else {
     document.getElementById('warning').textContent = "Required inputs must be filled correctly."
@@ -163,12 +164,13 @@ document.addEventListener('click', (event) => {
     clearAddCustomForm()
 
   } else if (event.target.classList.contains("premadeWorkout")) {
-    // let id = event.target.dataset.id
-    // axios.get(`/api/workouts/${id}`)
-    // .then(({data})=>{
-
-    // })
-    // .catch(err=>console.log(err))
+    let id = event.target.dataset.id
+  ]
+    axios.get(`/api/workouts/${id}`)
+      .then(({ data }) => {
+        templetWorkout = data
+      })
+      .catch(err => console.log(err))
   } else if (event.target.classList.contains("editWorkout")) {
     day = event.target.dataset.day
     workoutIndex = event.target.dataset.index
@@ -306,7 +308,7 @@ const init = () => {
   }
 
   renderAllRoutines()
-  renderPlaceholderTable()
+  renderPremadeWorkoutsTable()
 
 }
 

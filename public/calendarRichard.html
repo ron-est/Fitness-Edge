@@ -249,72 +249,71 @@
       </div>
 
       <div id="custom" class="col s12 textWhite">
-        <form>
+        <form onsubmit="return false;">
+          <p>Muscles:</p>
           <p>
-            <label id="titleLabel">*Title:</label>
-            <input type="text" id="title">
+            <label>
+              <input id="legs" name="muscle" type="radio" value="legs" checked />
+              <span>Legs</span>
+            </label>
           </p>
 
-          <form>
-            <p>
-              <label>
-                <input id="legs" name="muscle" type="radio" value="legs" checked />
-                <span>Legs</span>
-              </label>
-            </p>
+          <p>
+            <label>
+              <input id="chest" name="muscle" type="radio" value="chest" />
+              <span>Chest</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="shoulders" name="muscle" type="radio" value="shoulders" />
+              <span>Shoulders</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="back" name="muscle" type="radio" value="back" />
+              <span>Back</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="biceps" name="muscle" type="radio" value="biceps">
+              <span>Biceps</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="triceps" name="muscle" type="radio" value="triceps" />
+              <span>Triceps</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="core" name="muscle" type="radio" value="core" />
+              <span>Core</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="other" name="muscle" type="radio" value="other" />
+              <span>Other</span>
+            </label>
+          </p>
 
-            <p>
-              <label>
-                <input id="chest" name="muscle" type="radio" value="chest" />
-                <span>Chest</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input id="shoulders" name="muscle" type="radio" value="shoulders" />
-                <span>Shoulders</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input id="back" name="muscle" type="radio" value="back" />
-                <span>Back</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input id="biceps" name="muscle" type="radio" value="biceps">
-                <span>Biceps</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input id="triceps" name="muscle" type="radio" value="triceps" />
-                <span>Triceps</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input id="core" name="muscle" type="radio" value="core" />
-                <span>Core</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input id="other" name="muscle" type="radio" value="other" />
-                <span>Other</span>
-              </label>
-            </p>
-          </form>
+          <p>
+            <label id="titleLabel">*Title:</label>
+            <input type="text" id="title" required>
+          </p>
 
           <p>
             <label id="setsLabel">*Sets (Numbers Only):</label>
-            <input type="number" id="sets">
+            <input type="number" id="sets" required>
           </p>
 
           <p>
             <label id="repsLabel">*Reps:</label>
-            <input type="text" id="reps">
+            <input type="text" id="reps" required>
           </p>
 
           <p>
@@ -340,7 +339,7 @@
       <a class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
     </div>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
