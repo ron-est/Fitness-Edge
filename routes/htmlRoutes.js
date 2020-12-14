@@ -13,12 +13,4 @@ router.get('/calendarRichard', (req, res) => {
   res.sendFile(join(__dirname, '../public/calendarRichard.html'))
 })
 
-router.get('/cal', (req, res) => {
-  res.sendFile(join(__dirname, '../public/cal.html'))
-})
-
-router.get('/about', (req, res) => {
-  res.sendFile(join(__dirname, '../public/about.html'))
-})
-
 module.exports = router
