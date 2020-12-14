@@ -100,20 +100,45 @@
 <!-- https://dewey.tailorbrands.com/production/brand_version_mockup_image/720/4267272720_53195123-8bba-4e88-a023-1477f03b6c93.png?cb=1607542101 -->
 
 <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper" style="background-color: #121c25;">
-        <a href="#" class="brand-logo"><img
-            src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180'>
-        </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="./index">Home</a></li>
-          <li><a href="./calendar">Calender</a></li>
-          <li><a href="./about">About</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+  <a name="top"></a>
+  <header>
+    <div class="navbar-fixed">
+      <nav class="navf z-depth-3">
+        <div class="nav-wrapper">
+          <!-- menu icon -->
+          <a href="#" data-target="slide-out" class="sidenav-trigger side"><i class="material-icons">menu</i></a>
+  
+          <div class="container">
+            <!-- logo -->
+            <a href="index.html" class="brand-logo hide-on-med-and-down"><img
+                src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+            </a>
+            <a href="index.html" class="brand-logo hide-on-large-and-up"><img class="responsive-img"
+                src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+            </a>
+  
+            <!-- upper right nav -->
+            <ul class="right hide-on-med-and-down right">
+              <li><a class="white-text" href="./index.html">Home</a></li>
+              <li class="active"><a class="white-text" href="./calendar.html">Calendar</a></li>
+              <li><a class="white-text" href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+  
+        </div>
+      </nav>
+    </div>
+    <!-- side nav -->
+    <ul id="slide-out" class="sidenav">
+      <li><a class="white-text" href="./index.html"><i class="material-icons white-text">home</i>Home</a>
+      </li>
+      <li class="active"><a class="white-text" href="./calendar.html"><i
+            class="material-icons white-text">date_range</i>Calendar</a>
+      </li>
+      <li><a class="white-text" href="./contact.html"><i class="material-icons white-text">email</i>Contact</a></li>
+    </ul>
+  </header>
+  <!-- navbar ends -->
 
   <h5 class="textWhite">To get started, click on the plus icon in the bottom right corner of the day you would like to
     select a workout.</h5>
