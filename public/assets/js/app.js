@@ -24,29 +24,47 @@ const randInt = (max) => {
   return Math.floor(Math.random() * max)
 }
 
-///Testing code for testing what adding to the premade table looks like
-const renderPlaceholderTable = () => {
+///Renders the data tables for Premade Workouts
+
+const renderPremadeWorkoutsTable = () => {
   let htmlText = document.getElementById("premadeTable").innerHTML
-  let columns = ["Legs", "Chest", "Shoulders", "Back", "Biceps", "Triceps", "Core"]
-
-  let rows = []
-  let len = columns.length
-  for (let i = 0; i < len; i++) {
-    rows.push(randInt(10))
-  }
-
-  for (let i = 0; i < 10; i++) {
-    htmlText += '<tr>'
-    for (let j = 0; j < len; j++) {
-      if (rows[j] > i) {
-        htmlText += `<td class="premadeWorkout z-depth-2 hoverable" data_id="">${columns[j]}_${i}</td>`
-      } else {
-        htmlText += `<td class="z-depth-2"></td>`
+  axios.get('/api/workouts')
+    .then(({ data }) => {
+      let types = {
+        legs: [],
+        chest: [],
+        shoulders: [],
+        back: [],
+        biceps: [],
+        triceps: [],
+        core: []
       }
-    }
-    htmlText += '</tr>'
-  }
-  document.getElementById("premadeTable").innerHTML = htmlText
+
+      data.forEach(workout => {
+        types[workout.muscle].push(workout)
+      })
+      let len = 0
+      let muscles = ["legs", "chest", "shoulders", "back", "biceps", "triceps", "core"]
+      for (let i = 0; i < 7; i++) {
+        if (types[muscles[i]].length > len) {
+          len = types[muscles[i]].length
+        }
+      }
+      let htmlText = ''
+      for (let i = 0; i < len; i++) {
+        htmlText += '<tr>'
+        for (let j = 0; j < 7; j++) {
+          if (types[muscles[j]].length > i) {
+            let { id, title } = types[muscles[j]][i]
+            htmlText += `<td class="premadeWorkout z-depth-2 hoverable" data_id="${id}">${title}</td>`
+          } else {
+            htmlText += `<td class="z-depth-2"></td>`
+          }
+        }
+        htmlText += '</tr>'
+      }
+      document.getElementById("premadeTable").innerHTML = htmlText
+    })
 }
 
 ///Adding and Editing Custom Workouts to Routines
