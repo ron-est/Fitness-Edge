@@ -1,49 +1,49 @@
 body {
- display: flex;
- min-height: 100vh;
- flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
- flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 /* THEME navbar&footer + sidenav */
 
 .navf, .sidenav {
- background-color: #121c25;
+  background-color: #121c25;
 }
 
 /* THEME body */
 
 body, .bodybg {
- background-color: #2a3f58;
+  background-color: #2a3f58;
 }
 
 /* THEME accent */
 
 .accent {
- color: #e51b23;
+  color: #e51b23;
 }
 
 .accentbg {
- background-color: #e51b23;
+  background-color: #e51b23;
 }
 
 .circle {
- max-width: 6rem;
+  max-width: 6rem;
 }
 
 /* contact page */
 
 .htxt {
- color: #2a3f58;
+  color: #2a3f58;
 }
 
 .btxt {
- color: #121c25;
+  color: #121c25;
 }
 
 .center, .center-align {
- text-align: center;
+  text-align: center;
 }
