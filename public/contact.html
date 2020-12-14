@@ -10,6 +10,25 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    /* PARALLAX height and responsive width */
+    
+    .parallax-container {
+      height: 350px;
+    }
+
+   @media only screen and (max-width: 992px) {
+      .parallax img {
+        max-height: 130%;
+      }
+    }
+
+    @media only screen and (min-width: 993px) {
+      .parallax img {
+        max-height: 170%;
+      }
+    } */
+  </style>
 </head>
 
 <body>
@@ -52,9 +71,27 @@
   <!-- navbar ends -->
 
   <!-- page content starts -->
+  <div id="index-banner" class="parallax-container valign-wrapper">
+    <div class="container no-pad-bot">
+      <div class="container valign">
+        <br><br>
+        <h1 class="center htxt"><strong>Meet the team!</strong></h1>
+        <div class="center">
+          <!-- <h4 class="col s12 htxt"><strong>Click our individual links to learn more about our ongoing projects.</strong>
+          </h4> -->
+        </div>
+        <div class="center">
+          <i class="medium material-icons htxt">keyboard_arrow_down</i>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img class="brickWall"src="./assets/img/brickWall.jpg" alt=""></div>
+  </div>
 
-  <h3 class="white-text center-align"><strong>About Us!</strong></h3>
-
+  <!-- cards -->
+  <a name="startCards"></a>
+  <div></div>
   <div class="container">
     <div class="row">
       <div class="col s12 m6 offset-m3">
@@ -191,6 +228,11 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
+    //PARALLAX init
+    document.addEventListener('DOMContentLoaded', () => {
+      const parallaxEffect = document.querySelectorAll('.parallax');
+      M.Parallax.init(parallaxEffect, {});
+    });
     //SIDENAV init
     document.addEventListener('DOMContentLoaded', () => {
       const slide = document.querySelectorAll('.sidenav');

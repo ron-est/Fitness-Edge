@@ -33,3 +33,17 @@ body, .bodybg {
 .circle {
   max-width: 6rem;
 }
+
+/* contact page */
+
+.htxt {
+  color: #2a3f58;
+}
+
+.btxt {
+  color: #121c25;
+}
+
+.center, .center-align {
+  text-align: center;
+}
