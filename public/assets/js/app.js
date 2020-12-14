@@ -353,24 +353,41 @@ const init = () => {
 
   //Dragula init
   let containers = [document.getElementById('mondayRoutine'), document.getElementById('tuesdayRoutine'), document.getElementById('wednesdayRoutine'), document.getElementById('thursdayRoutine'), document.getElementById('fridayRoutine'), document.getElementById('saturdayRoutine'), document.getElementById('sundayRoutine')]
-  dragula(containers).on('drag', function (el) {
-    dragStartDay = el.dataset.day
-    el.className = el.className.replace('ex-moved', '');
-    console.log("drag")
-  }).on('drop', function (el) {
-    el.dataset.day = dragEndDay
-    el.className += ' ex-moved';
-    
-    console.log(document.getElementById(`${dragEndDay}Routine`).childNodes)
-  }).on('over', function (el, container) {
-    dragEndDay = container.dataset.day
-    container.className += ' ex-over';
-    console.log("over")
-  }).on('out', function (el, container) {
-    container.dataset.day
-    container.className = container.className.replace('ex-over', '');
-    console.log("out")
-  });
+  dragula(containers)
+    .on('drag', function (el) {
+      dragStartDay = el.dataset.day
+      el.className = el.className.replace('ex-moved', '');
+    })
+    .on('drop', function (el) {
+      el.className += ' ex-moved';
+      let index = el.dataset.index
+      let oldRoutines = getRoutines()
+      let newRoutines = getRoutines()
+
+      newRoutines[dragStartDay].splice(index, 1)
+      let nodes = document.getElementById(`${dragEndDay}Routine`).childNodes
+      let offset = 0
+      nodes.forEach((node, i) => {
+        if (node.id) {
+          if (node === el) {
+            newRoutines[dragEndDay].splice(i - offset, 0, oldRoutines[dragStartDay][index])
+            setRoutines(newRoutines)
+            renderSingleRoutine(dragStartDay)
+            renderSingleRoutine(dragEndDay)
+          }
+        } else {
+          offset++
+        }
+      })
+    })
+    .on('over', function (el, container) {
+      dragEndDay = container.dataset.day
+      container.className += ' ex-over';
+    })
+    .on('out', function (el, container) {
+      container.dataset.day
+      container.className = container.className.replace('ex-over', '');
+    });
 
 }
 
