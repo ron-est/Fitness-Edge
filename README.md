@@ -1,7 +1,12 @@
 # Fitness Edge
+
+https://fitnessedge.herokuapp.com/
+
+
 Have you wanted to start going to the gym but don't know where to start? Achieve your fitness goals with a plan in mind! Fitness Edge lets you add workouts from our database to a weekly schedule as well as input your own custom routines. Your body is your temple and every building always starts out with a solid blueprint. Starting planning your fitness journey today!
 
 # Technologies Used
+
 - HTML/CSS/JS
 - [Node.JS](https://nodejs.org/en/)
 - [MySQL](https://www.mysql.com/)
@@ -10,6 +15,7 @@ Have you wanted to start going to the gym but don't know where to start? Achieve
 - [Dragula](https://github.com/bevacqua/dragula)
 
 # Installation
+
     npm install
 
 # Screenshots
@@ -17,6 +23,7 @@ Have you wanted to start going to the gym but don't know where to start? Achieve
  ![image](https://c4.wallpaperflare.com/wallpaper/435/960/857/birds-parrot-amazon-parrot-bird-wallpaper-preview.jpg)
 
 # Contributers
+
 - [Celia Noriega](https://github.com/CeliaNoriega)
 - [Isaiah Anthony](https://github.com/isaiahant)
 - [Nick DeMarco](https://github.com/nickdmrco)
@@ -24,6 +31,7 @@ Have you wanted to start going to the gym but don't know where to start? Achieve
 - [Ronald Esteban](https://github.com/ron-est)
 
 # MIT License
+
 Copyright (c) 2012-2020 Scott Chacon and others
 
 Permission is hereby granted, free of charge, to any person obtaining
