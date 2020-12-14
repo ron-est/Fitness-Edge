@@ -29,3 +29,8 @@ body, .bodybg {
 .accentbg {
   background-color: #e51b23;
 }
+
+.circle {
+  max-width: 6rem;
+}
+
