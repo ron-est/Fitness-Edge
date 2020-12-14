@@ -14,6 +14,7 @@
       height: 100%;
       width: 100%
     }
+
     #cal {
       scroll-snap-type: x mandatory;
       white-space: nowrap;
@@ -107,7 +108,7 @@
         <div class="nav-wrapper">
           <!-- menu icon -->
           <a href="#" data-target="slide-out" class="sidenav-trigger side"><i class="material-icons">menu</i></a>
-  
+
           <div class="container">
             <!-- logo -->
             <a href="index.html" class="brand-logo hide-on-med-and-down"><img
@@ -116,7 +117,7 @@
             <a href="index.html" class="brand-logo hide-on-large-and-up"><img class="responsive-img"
                 src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
             </a>
-  
+
             <!-- upper right nav -->
             <ul class="right hide-on-med-and-down right">
               <li><a class="white-text" href="./index.html">Home</a></li>
@@ -124,7 +125,7 @@
               <li><a class="white-text" href="./contact.html">Contact</a></li>
             </ul>
           </div>
-  
+
         </div>
       </nav>
     </div>
@@ -322,6 +323,12 @@
 
     $(document).ready(function () {
       $('.tabs').tabs();
+    });
+
+    //SIDENAV init
+    document.addEventListener('DOMContentLoaded', () => {
+      const slide = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(slide, {});
     });
   </script>
   <script src="./assets/js/app.js"></script>
