@@ -2,6 +2,8 @@ let day = 'monday'
 let workoutIndex = '-1'
 let customWorkoutId = '-1'
 let premadeWorkout = {}
+let dragStartDay = 'monday'
+let dragEndDay = 'monday'
 
 
 const getCustomWorkouts = () => {
@@ -287,7 +289,7 @@ const renderSingleRoutine = (day) => {
   let routine = getRoutines()[day]
   routine.forEach(({ title, muscle, sets, reps, weight, description }, i) => {
     htmlText += `
-      <div class="card hoverable wrkotCard" id="${day}-${i}">
+      <div class="card hoverable wrkotCard" data-day="${day}" data-index="${i}" id="${day}-${i}">
         <h6 class="truncate wrkotTitle ">
           <a class="halfway-fab waves-effect waves-light modal-trigger" href="#modal">
             <i class="material-icons editWorkout" data-day="${day}" data-index="${i}">fitness_center</i>
@@ -348,6 +350,27 @@ const init = () => {
 
   renderAllRoutines()
   renderPremadeWorkoutsTable()
+
+  //Dragula init
+  let containers = [document.getElementById('mondayRoutine'), document.getElementById('tuesdayRoutine'), document.getElementById('wednesdayRoutine'), document.getElementById('thursdayRoutine'), document.getElementById('fridayRoutine'), document.getElementById('saturdayRoutine'), document.getElementById('sundayRoutine')]
+  dragula(containers).on('drag', function (el) {
+    dragStartDay = el.dataset.day
+    el.className = el.className.replace('ex-moved', '');
+    console.log("drag")
+  }).on('drop', function (el) {
+    el.dataset.day = dragEndDay
+    el.className += ' ex-moved';
+    
+    console.log(document.getElementById(`${dragEndDay}Routine`).childNodes)
+  }).on('over', function (el, container) {
+    dragEndDay = container.dataset.day
+    container.className += ' ex-over';
+    console.log("over")
+  }).on('out', function (el, container) {
+    container.dataset.day
+    container.className = container.className.replace('ex-over', '');
+    console.log("out")
+  });
 
 }
 

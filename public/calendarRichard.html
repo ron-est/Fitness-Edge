@@ -91,6 +91,37 @@
       color: white
     }
 
+    .card-content {
+      width: 100%;
+      min-height: 13rem;
+    }
+
+    .gu-mirror {
+      position: fixed !important;
+      margin: 0 !important;
+      z-index: 9999 !important;
+      opacity: 0.8;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+      filter: alpha(opacity=80);
+    }
+
+    .gu-hide {
+      display: none !important;
+    }
+
+    .gu-unselectable {
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      user-select: none !important;
+    }
+
+    .gu-transit {
+      opacity: 0.2;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+      filter: alpha(opacity=20);
+    }
+
     @media screen and (max-width: 600px) {
       #cal {
         overflow-x: hidden;
@@ -135,7 +166,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="monday">add</i></a>
       </div>
-      <div class="card-content textWhite" id="mondayRoutine">
+      <div class="card-content textWhite" data-day="monday" id="mondayRoutine">
 
       </div>
     </div>
@@ -149,7 +180,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="tuesday">add</i></a>
       </div>
-      <div class="card-content" id="tuesdayRoutine">
+      <div class="card-content" data-day="tuesday" id="tuesdayRoutine">
       </div>
     </div>
 
@@ -163,7 +194,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="wednesday">add</i></a>
       </div>
-      <div class="card-content" id="wednesdayRoutine">
+      <div class="card-content" data-day="wednesday" id="wednesdayRoutine">
       </div>
     </div>
 
@@ -176,7 +207,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="thursday">add</i></a>
       </div>
-      <div class="card-content" id="thursdayRoutine">
+      <div class="card-content" data-day="thursday" id="thursdayRoutine">
       </div>
     </div>
 
@@ -189,7 +220,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="friday">add</i></a>
       </div>
-      <div class="card-content" id="fridayRoutine">
+      <div class="card-content" data-day="friday" id="fridayRoutine">
       </div>
     </div>
 
@@ -202,7 +233,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="saturday">add</i></a>
       </div>
-      <div class="card-content" id="saturdayRoutine">
+      <div class="card-content" data-day="saturday" id="saturdayRoutine">
       </div>
     </div>
 
@@ -216,7 +247,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="sunday">add</i></a>
       </div>
-      <div class="card-content" id="sundayRoutine">
+      <div class="card-content" data-day="sunday" id="sundayRoutine">
       </div>
     </div>
   </div>
@@ -349,6 +380,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js '></script>
 
   <script>
     $(document).ready(function () {
