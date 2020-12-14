@@ -15,6 +15,13 @@
       width: 100%
     }
 
+    .page-footer {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
     #cal {
       scroll-snap-type: x mandatory;
       white-space: nowrap;
@@ -82,6 +89,37 @@
 
     form {
       color: white
+    }
+
+    .card-content {
+      width: 100%;
+      min-height: 13rem;
+    }
+
+    .gu-mirror {
+      position: fixed !important;
+      margin: 0 !important;
+      z-index: 9999 !important;
+      opacity: 0.8;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+      filter: alpha(opacity=80);
+    }
+
+    .gu-hide {
+      display: none !important;
+    }
+
+    .gu-unselectable {
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      user-select: none !important;
+    }
+
+    .gu-transit {
+      opacity: 0.2;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+      filter: alpha(opacity=20);
     }
 
     @media screen and (max-width: 600px) {
@@ -153,17 +191,8 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="monday">add</i></a>
       </div>
-      <div class="card-content textWhite" id="mondayRoutine">
-        <!-- USE AS TEMPLATE FOR INSERTED CARD -->
-        <div class="card hoverable wrkotCard">
-          <h6 class="truncate wrkotTitle "><a class="halfway-fab waves-effect waves-light modal-trigger"
-              href="#modal"><i class="material-icons editWorkout" data-day="monday"
-                data-index="0">fitness_center</i></a></a>Big Gain
-            Triceps(custom)</h6>
-          <p>Reps: 7,000 reps</p>
-          <p>Weight: 80,000 Lbs</p>
-        </div>
-        <!--------------------------------------->
+      <div class="card-content textWhite" data-day="monday" id="mondayRoutine">
+
       </div>
     </div>
 
@@ -176,7 +205,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="tuesday">add</i></a>
       </div>
-      <div class="card-content" id="tuesdayRoutine">
+      <div class="card-content" data-day="tuesday" id="tuesdayRoutine">
       </div>
     </div>
 
@@ -190,7 +219,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="wednesday">add</i></a>
       </div>
-      <div class="card-content" id="wednesdayRoutine">
+      <div class="card-content" data-day="wednesday" id="wednesdayRoutine">
       </div>
     </div>
 
@@ -203,7 +232,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="thursday">add</i></a>
       </div>
-      <div class="card-content" id="thursdayRoutine">
+      <div class="card-content" data-day="thursday" id="thursdayRoutine">
       </div>
     </div>
 
@@ -216,7 +245,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="friday">add</i></a>
       </div>
-      <div class="card-content" id="fridayRoutine">
+      <div class="card-content" data-day="friday" id="fridayRoutine">
       </div>
     </div>
 
@@ -229,7 +258,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="saturday">add</i></a>
       </div>
-      <div class="card-content" id="saturdayRoutine">
+      <div class="card-content" data-day="saturday" id="saturdayRoutine">
       </div>
     </div>
 
@@ -243,7 +272,7 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
             class="material-icons addWorkout" data-day="sunday">add</i></a>
       </div>
-      <div class="card-content" id="sundayRoutine">
+      <div class="card-content" data-day="sunday" id="sundayRoutine">
       </div>
     </div>
   </div>
@@ -273,32 +302,104 @@
             <th>Core</th>
           </tr>
         </table>
+        <p id="premadeMuscle"></p>
+        <p id="premadeTitle"></p>
+        <p id="premadeSets"></p>
+        <p id="premadeReps"></p>
+        <p id="premadeWeights"></p>
+        <p id="premadeDescription"></p>
+        <button type="button" id="addPremadeToRoutine" style="display: none">Save
       </div>
 
       <div id="custom" class="col s12 textWhite">
-        <form>
-          <label for="title">*Title:</label>
-          <input type="text" id="title" name="title" required>
-          <label for="muscle">*Muscle:</label>
-          <input type="text" id="muscle" name="muscle" required>
-          <label for="sets">*Sets:</label>
-          <input type="text" id="sets" name="sets" required>
-          <label for="reps">*Reps:</label>
-          <input type="text" id="reps" name="reps" required>
-          <label for="weight">Weight:</label>
-          <input type="text" pattern="\d*" id="weight" name="weight">
-          <label for="description">Description</label>
-          <input type="text" id="description" name="description">
-          <p>* Required</p>
+        <form onsubmit="return false;">
+          <p>Muscles:</p>
           <p>
-            <button type="button" id="addCustomToRoutine" class="modal-close" href="./calendar">Save
+            <label>
+              <input id="legs" name="muscle" type="radio" value="legs" checked />
+              <span>Legs</span>
+            </label>
+          </p>
+
+          <p>
+            <label>
+              <input id="chest" name="muscle" type="radio" value="chest" />
+              <span>Chest</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="shoulders" name="muscle" type="radio" value="shoulders" />
+              <span>Shoulders</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="back" name="muscle" type="radio" value="back" />
+              <span>Back</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="biceps" name="muscle" type="radio" value="biceps">
+              <span>Biceps</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="triceps" name="muscle" type="radio" value="triceps" />
+              <span>Triceps</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="core" name="muscle" type="radio" value="core" />
+              <span>Core</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="other" name="muscle" type="radio" value="other" />
+              <span>Other</span>
+            </label>
+          </p>
+
+          <p>
+            <label id="titleLabel">*Title:</label>
+            <input type="text" id="title" required>
+          </p>
+
+          <p>
+            <label id="setsLabel">*Sets (Numbers Only):</label>
+            <input type="number" id="sets" required>
+          </p>
+
+          <p>
+            <label id="repsLabel">*Reps:</label>
+            <input type="text" id="reps" required>
+          </p>
+
+          <p>
+            <label id="weightLabel">Weight:</label>
+            <input type="number" id="weight">
+          </p>
+
+          <p>
+            <label id="descriptionLabel">Description</label>
+            <input type="text" id="description">
+          </p>
+
+          <p>* Required</p>
+
+          <p>
+            <button type="button" id="addCustomToRoutine" class="formButton">Save
               <p id="warning"></p>
           </p>
         </form>
       </div>
     </div>
     <div class="modal-footer" style="background-color:#2a3f58">
-      <a href="./calendar" class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+      <a class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
     </div>
   </div>
 
@@ -313,8 +414,10 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js '></script>
 
   <script>
     $(document).ready(function () {
