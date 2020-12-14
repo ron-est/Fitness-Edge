@@ -9,8 +9,8 @@ router.get('/calendar', (req, res) => {
   res.sendFile(join(__dirname, '../public/calendar.html'))
 })
 
-router.get('/calendarRichard', (req, res) => {
-  res.sendFile(join(__dirname, '../public/calendarRichard.html'))
+router.get('/contact', (req, res) => {
+  res.sendFile(join(__dirname, '../public/contact.html'))
 })
 
 module.exports = router
