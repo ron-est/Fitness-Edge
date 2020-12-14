@@ -50,11 +50,29 @@ const renderPlaceholderTable = () => {
 }
 
 ///Adding and Editing Custom Workouts to Routines
-const validateWorkout = ({ title, muscle, sets, reps, weight }) => {
-  if (title === '') {
-    return false
+
+const clearAddCustomForm = () => {
+  document.getElementById('title').value = ''
+  document.getElementById('legs').checked = true
+  document.getElementById('sets').value = ''
+  document.getElementById('reps').value = ''
+  document.getElementById('weight').value = ''
+  document.getElementById('description').value = ''
+  document.getElementById('warning').textContent = ''
+}
+
+const getSelectedMuscle = () => {
+  let muscles = document.querySelectorAll('input[name="muscle"]')
+  let len = muscles.length
+  for (let i = 0; i < len; i++) {
+    if (muscles[i].checked) {
+      return muscles[i].value
+    }
   }
-  if (muscle === '') {
+}
+
+const validateWorkout = ({ title, sets, reps }) => {
+  if (title === '') {
     return false
   }
   if (isNaN(parseInt(sets))) {
@@ -63,11 +81,7 @@ const validateWorkout = ({ title, muscle, sets, reps, weight }) => {
   if (reps === '') {
     return false
   }
-  if (weight) {
-    if (isNaN(parseInt(weight))) {
-      return false
-    }
-  }
+
   return true
 }
 
@@ -82,10 +96,9 @@ document.getElementById("sets").addEventListener("input", (event) => {
 })
 
 document.getElementById('addCustomToRoutine').addEventListener('click', event => {
-  event.preventDefault()
   let workout = {
     title: document.getElementById('title').value,
-    muscle: document.getElementById('muscle').value,
+    muscle: getSelectedMuscle(),
     sets: document.getElementById('sets').value,
     reps: document.getElementById('reps').value,
     weight: (document.getElementById('weight').value) ? document.getElementById('weight').value : null,
@@ -95,21 +108,17 @@ document.getElementById('addCustomToRoutine').addEventListener('click', event =>
   if (validateWorkout(workout)) {
     let routines = getRoutines()
 
-    document.getElementById('title').value = ''
-    document.getElementById('muscle').value = ''
-    document.getElementById('sets').value = ''
-    document.getElementById('reps').value = ''
-    document.getElementById('weight').value = ''
-    document.getElementById('description').value = ''
-    document.getElementById('warning').textContent = ''
-
     if (workoutIndex < 0) {
       routines[day].push(workout)
     } else {
       routines[day][workoutIndex] = workout
     }
+
     setRoutines(routines)
     renderSingleRoutine(day)
+
+    clearAddCustomForm()
+    $('.modal').modal().close()
 
   } else {
     document.getElementById('warning').textContent = "Required inputs must be filled correctly."
@@ -133,6 +142,7 @@ document.addEventListener('click', (event) => {
     workoutIndex = -1
 
     changeModelTitle()
+    clearAddCustomForm()
 
   } else if (event.target.classList.contains("premadeWorkout")) {
     // let id = event.target.dataset.id
@@ -145,10 +155,11 @@ document.addEventListener('click', (event) => {
     day = event.target.dataset.day
     workoutIndex = event.target.dataset.index
     changeModelTitle()
+
     let { title, muscle, sets, reps, weight, description } = getRoutines()[day][workoutIndex]
 
     document.getElementById("title").value = title
-    document.getElementById("muscle").value = muscle
+    document.getElementById(muscle).checked = true
     document.getElementById("sets").value = sets
     document.getElementById("reps").value = reps
 

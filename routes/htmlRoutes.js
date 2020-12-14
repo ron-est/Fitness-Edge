@@ -9,6 +9,10 @@ router.get('/calendar', (req, res) => {
   res.sendFile(join(__dirname, '../public/calendar.html'))
 })
 
+router.get('/calendarRichard', (req, res) => {
+  res.sendFile(join(__dirname, '../public/calendarRichard.html'))
+})
+
 router.get('/cal', (req, res) => {
   res.sendFile(join(__dirname, '../public/cal.html'))
 })
