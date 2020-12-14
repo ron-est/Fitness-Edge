@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Edge - Calendar</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+  <style>
+    #images {
+      height: 100%;
+      width: 100%
+    }
+
+    .page-footer {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #cal {
+      scroll-snap-type: x mandatory;
+      white-space: nowrap;
+    }
+
+    .card {
+      width: 272px;
+      display: inline-block;
+      white-space: normal;
+      background-color: #121c25;
+      vertical-align: top;
+    }
+
+    .textWhite {
+      color: white
+    }
+
+    .modalStyle {
+      background-color: #2a3f58;
+      height: 5000px;
+    }
+
+    body {
+      background-color: #2a3f58;
+    }
+
+    th {
+      text-align: center;
+    }
+
+    td {
+      padding: 1rem;
+      border-spacing: 0px;
+      text-align: center;
+      color: white;
+    }
+
+    .btn {
+      color: #2a3f58;
+    }
+
+    .buttonColor {
+      color: #2a3f58;
+    }
+
+    .wrkotCard {
+      max-width: 100%;
+      background-color: #2a3f58;
+      border: solid black 2px;
+      padding: 6px;
+    }
+
+    .wrkotTitle {
+      margin-block-start: 0px;
+      height: 23px;
+      font-weight: bold;
+    }
+
+    button {
+      height: 100%;
+      width: 100%;
+      background-color: #121c25;
+      color: white;
+    }
+
+    form {
+      color: white
+    }
+
+    .card-content {
+      width: 100%;
+      min-height: 13rem;
+    }
+
+    p {
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+    }
+
+    .gu-mirror {
+      position: fixed !important;
+      margin: 0 !important;
+      z-index: 9999 !important;
+      opacity: 0.8;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+      filter: alpha(opacity=80);
+    }
+
+    .gu-hide {
+      display: none !important;
+    }
+
+    .gu-unselectable {
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      user-select: none !important;
+    }
+
+    .gu-transit {
+      opacity: 0.2;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+      filter: alpha(opacity=20);
+    }
+
+    @media only screen and (max-width: 768px) {
+      #cal {
+        white-space: normal;
+      }
+
+      .card {
+        width: 90%;
+        margin-left: 5%;
+        margin-right:5%;
+      }
+    }
+  </style>
+
+</head>
+
+<!-- https://dewey.tailorbrands.com/production/brand_version_mockup_image/720/4267272720_53195123-8bba-4e88-a023-1477f03b6c93.png?cb=1607542101 -->
+
+<body>
+  <a name="top"></a>
+  <header>
+    <div class="navbar-fixed">
+      <nav class="navf z-depth-3">
+        <div class="nav-wrapper">
+          <!-- menu icon -->
+          <a href="#" data-target="slide-out" class="sidenav-trigger side"><i class="material-icons">menu</i></a>
+
+          <div class="container">
+            <!-- logo -->
+            <a href="/" class="brand-logo hide-on-med-and-down"><img
+                src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+            </a>
+            <a href="/" class="brand-logo hide-on-large-and-up"><img class="responsive-img"
+                src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/812/4261663812_b3bba68e-e731-4f41-92c0-1570c61fc536.png?cb=1607458180%27%3E'>
+            </a>
+
+            <!-- upper right nav -->
+            <ul class="right hide-on-med-and-down right">
+              <li><a class="white-text" href="/">Home</a></li>
+              <li class="active"><a class="white-text" href="/calendar">Calendar</a></li>
+              <li><a class="white-text" href="/contact">Contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+    <!-- side nav -->
+    <ul id="slide-out" class="sidenav">
+      <li><a class="white-text" href="/"><i class="material-icons white-text">home</i>Home</a>
+      </li>
+      <li class="active"><a class="white-text" href="/calendar"><i
+            class="material-icons white-text">date_range</i>Calendar</a>
+      </li>
+      <li><a class="white-text" href="/contact"><i class="material-icons white-text">email</i>Contact</a></li>
+    </ul>
+  </header>
+  <!-- navbar ends -->
+
+  <h5 class="textWhite">To get started, click on the plus icon in the bottom right corner of the day you would like to
+    select a workout.</h5>
+
+  <div id="cal">
+    <div class="card z-depth-2 hoverable">
+      <div>
+        <span class="card-title grey-text text-darken-4 center-align">
+          <h4 class="textWhite">Monday</h4>
+          <p class="close"><i class="fas fa-trash-alt deleteRoutine textWhite" data-day="monday"></i></p>
+        </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="monday">add</i></a>
+      </div>
+      <div class="card-content textWhite" data-day="monday" id="mondayRoutine">
+
+      </div>
+    </div>
+
+
+    <div class="card z-depth-2 hoverable">
+      <div>
+        <span class="card-title grey-text text-darken-4 center-align">
+          <h4 class="textWhite">Tuesday</h4>
+          <p class="close"><i class="fas fa-trash-alt deleteRoutine textWhite" data-day="tuesday"></i></p>
+        </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="tuesday">add</i></a>
+      </div>
+      <div class="card-content textWhite" data-day="tuesday" id="tuesdayRoutine">
+      </div>
+    </div>
+
+
+
+    <div class="card z-depth-2 hoverable">
+      <div>
+        <span class="card-title grey-text text-darken-4 center-align">
+          <h4 class="textWhite">Wednesday</h4>
+          <p class="close"><i class="fas fa-trash-alt deleteRoutine textWhite" data-day="wednesday"></i></p>
+        </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="wednesday">add</i></a>
+      </div>
+      <div class="card-content textWhite" data-day="wednesday" id="wednesdayRoutine">
+      </div>
+    </div>
+
+
+    <div class="card z-depth-2 hoverable">
+      <div>
+        <span class="card-title grey-text text-darken-4 center-align">
+          <h4 class="textWhite">Thursday</h4>
+          <p class="close"><i class="fas fa-trash-alt deleteRoutine textWhite" data-day="thursday"></i></p>
+        </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="thursday">add</i></a>
+      </div>
+      <div class="card-content textWhite" data-day="thursday" id="thursdayRoutine">
+      </div>
+    </div>
+
+
+    <div class="card z-depth-2 hoverable">
+      <div>
+        <span class="card-title grey-text text-darken-4 center-align">
+          <h4 class="textWhite">Friday</h4>
+          <p class="close"><i class="fas fa-trash-alt deleteRoutine textWhite" data-day="friday"></i></p>
+        </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="friday">add</i></a>
+      </div>
+      <div class="card-content textWhite" data-day="friday" id="fridayRoutine">
+      </div>
+    </div>
+
+
+    <div class="card z-depth-2 hoverable">
+      <div>
+        <span class="card-title grey-text text-darken-4 center-align">
+          <h4 class="textWhite">Saturday</h4>
+          <p class="close"><i class="fas fa-trash-alt deleteRoutine textWhite" data-day="saturday"></i></p>
+        </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="saturday">add</i></a>
+      </div>
+      <div class="card-content textWhite" data-day="saturday" id="saturdayRoutine">
+      </div>
+    </div>
+
+
+    <div class="card z-depth-2 hoverable">
+      <div>
+
+        <span class="card-title grey-text text-darken-4 center-align">
+          <h4 class="textWhite">Sunday</h4>
+          <p class="close"><i class="fas fa-trash-alt deleteRoutine textWhite" data-day="sunday"></i></p>
+        </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal"><i
+            class="material-icons addWorkout" data-day="sunday">add</i></a>
+      </div>
+      <div class="card-content textWhite" data-day="sunday" id="sundayRoutine">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modalStyle" id="modal">
+    <h4 class="center-align textWhite" id="modalTitle"></h4>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs center-align" style="background-color: #121c25; max-width: 100%;">
+          <li class="tab col s3" style="min-width:50%"><a href="#premade">Suggested Workouts</a></li>
+          <li class="tab col s3" style="min-width:50%"><a class="active" href="#custom">Custom Workouts</a></li>
+        </ul>
+      </div>
+
+      <div id="premade" class="col s12 textWhite">
+        <table id="premadeTable">
+          <tr>
+            <th>Legs</th>
+            <th>Chest</th>
+            <th>Shoulders</th>
+            <th>Back</th>
+            <th>Biceps</th>
+            <th>Triceps</th>
+            <th>Core</th>
+          </tr>
+        </table>
+        <div class="card z-depth-2 hoverable">
+          <div class="card-content textWhite wrkotCard" id="premadeCard">
+        
+          </div>
+        </div>
+        <button type="button" id="addPremadeToRoutine" style="display: none">Save
+      </div>
+
+      <div id="custom" class="col s12 textWhite">
+        <form onsubmit="return false;">
+          <p>Muscles:</p>
+          <p>
+            <label>
+              <input id="legs" name="muscle" type="radio" value="legs" checked />
+              <span>Legs</span>
+            </label>
+          </p>
+
+          <p>
+            <label>
+              <input id="chest" name="muscle" type="radio" value="chest" />
+              <span>Chest</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="shoulders" name="muscle" type="radio" value="shoulders" />
+              <span>Shoulders</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="back" name="muscle" type="radio" value="back" />
+              <span>Back</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="biceps" name="muscle" type="radio" value="biceps">
+              <span>Biceps</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="triceps" name="muscle" type="radio" value="triceps" />
+              <span>Triceps</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="core" name="muscle" type="radio" value="core" />
+              <span>Core</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input id="other" name="muscle" type="radio" value="other" />
+              <span>Other</span>
+            </label>
+          </p>
+
+          <p>
+            <label id="titleLabel">*Title:</label>
+            <input type="text" id="title" required>
+          </p>
+
+          <p>
+            <label id="setsLabel">*Sets (Numbers Only):</label>
+            <input type="number" id="sets" required>
+          </p>
+
+          <p>
+            <label id="repsLabel">*Reps:</label>
+            <input type="text" id="reps" required>
+          </p>
+
+          <p>
+            <label id="weightLabel">Weight:</label>
+            <input type="number" id="weight">
+          </p>
+
+          <p>
+            <label id="descriptionLabel">Description</label>
+            <input type="text" id="description">
+          </p>
+
+          <p>* Required</p>
+
+          <p>
+            <button type="button" id="addCustomToRoutine" class="formButton">Save
+              <p id="warning"></p>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer" style="background-color:#2a3f58">
+      <a class="btn blue modal-close waves-effect waves-green btn-flat">Done</a>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="page-footer navf z-depth-3 hide-on-med-and-up">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 center-align">
+          <a class="white-text" href="#top">Back to top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js '></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.modal').modal();
+    });
+
+    $(document).ready(function () {
+      $('.tabs').tabs();
+    });
+
+    //SIDENAV init
+    document.addEventListener('DOMContentLoaded', () => {
+      const slide = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(slide, {});
+    });
+  </script>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
