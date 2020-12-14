@@ -1,7 +1,7 @@
 let day = 'monday'
 let workoutIndex = '-1'
 let customWorkoutId = '-1'
-let templetWorkout = {}
+let premadeWorkout = {}
 
 
 const getCustomWorkouts = () => {
@@ -24,51 +24,35 @@ const randInt = (max) => {
   return Math.floor(Math.random() * max)
 }
 
-///Renders the data tables for Premade Workouts
+///Adding and Editing Custom Workouts to Routines
 
-const renderPremadeWorkoutsTable = () => {
-  let htmlText = document.getElementById("premadeTable").innerHTML
-  axios.get('/api/workouts')
-    .then(({ data }) => {
-      let types = {
-        legs: [],
-        chest: [],
-        shoulders: [],
-        back: [],
-        biceps: [],
-        triceps: [],
-        core: []
-      }
-
-      data.forEach(workout => {
-        types[workout.muscle].push(workout)
-      })
-      let len = 0
-      let muscles = ["legs", "chest", "shoulders", "back", "biceps", "triceps", "core"]
-      for (let i = 0; i < 7; i++) {
-        if (types[muscles[i]].length > len) {
-          len = types[muscles[i]].length
-        }
-      }
-      let htmlText = document.getElementById("premadeTable").innerHTML
-      for (let i = 0; i < len; i++) {
-        htmlText += '<tr>'
-        for (let j = 0; j < 7; j++) {
-          if (types[muscles[j]].length > i) {
-            let { id, title } = types[muscles[j]][i]
-            htmlText += `<td class="premadeWorkout z-depth-2 hoverable" data-id="${id}">${title}</td>`
-          } else {
-            htmlText += `<td class="z-depth-2"></td>`
-          }
-        }
-        htmlText += '</tr>'
-      }
-      document.getElementById("premadeTable").innerHTML = htmlText
-    })
-    .catch(err => { console.error(err) })
+const clearTemplateForm = () => {
+  document.getElementById('premadeMuscle').textContent = ''
+  document.getElementById('premadeTitle').textContent = ''
+  document.getElementById('premadeSets').textContent = ''
+  document.getElementById('premadeReps').textContent = ''
+  document.getElementById('premadeWeights').textContent = ''
+  document.getElementById('premadeDescription').textContent = ''
+  document.getElementById('addPremadeToRoutine').style.display = 'none'
 }
 
-///Adding and Editing Custom Workouts to Routines
+document.getElementById('addPremadeToRoutine').addEventListener('click', (event) => {
+  let routines = getRoutines()
+  if (workoutIndex < 0) {
+    routines[day].push(premadeWorkout)
+    setRoutines(routines)
+    renderSingleRoutine(day)
+  } else {
+    routines[day][workoutIndex] = premadeWorkout
+    setRoutines(routines)
+    renderWorkout(day, workoutIndex)
+  }
+  premadeWorkout = {}
+  clearTemplateForm()
+  clearAddCustomForm()
+  $('.modal').modal('close')
+})
+
 
 const clearAddCustomForm = () => {
   document.getElementById('title').value = ''
@@ -129,13 +113,17 @@ document.getElementById('addCustomToRoutine').addEventListener('click', event =>
 
     if (workoutIndex < 0) {
       routines[day].push(workout)
+      setRoutines(routines)
+      renderSingleRoutine(day)
+
     } else {
       routines[day][workoutIndex] = workout
+      setRoutines(routines)
+      renderWorkout(day, workoutIndex)
     }
 
-    setRoutines(routines)
-    renderSingleRoutine(day)
-
+    premadeWorkout = {}
+    clearTemplateForm()
     clearAddCustomForm()
     $('.modal').modal('close')
 
@@ -152,7 +140,6 @@ const changeModelTitle = () => {
   modalTitle.textContent = modalTitle.textContent.replace("{ day }", day[0].toUpperCase() + day.substring(1))
 }
 
-
 ///Listener for Click Events///
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains("addWorkout")) {
@@ -165,10 +152,10 @@ document.addEventListener('click', (event) => {
 
   } else if (event.target.classList.contains("premadeWorkout")) {
     let id = event.target.dataset.id
-  ]
     axios.get(`/api/workouts/${id}`)
       .then(({ data }) => {
-        templetWorkout = data
+        premadeWorkout = data
+        renderPremadeTemplate(premadeWorkout)
       })
       .catch(err => console.log(err))
   } else if (event.target.classList.contains("editWorkout")) {
@@ -218,16 +205,68 @@ document.addEventListener('click', (event) => {
 })
 
 ///Rendering Workout and Routines
+const renderPremadeTemplate = ({ title, muscle, sets, reps, weight, description }) => {
+  document.getElementById('premadeMuscle').textContent = `Muscle: ${muscle}`
+  document.getElementById('premadeTitle').textContent = `Title: ${title}`
+  document.getElementById('premadeSets').textContent = `Sets: ${sets}`
+  document.getElementById('premadeReps').textContent = `Reps: ${reps}`
+  document.getElementById('premadeWeights').textContent = (weight) ? `Weight: ${weight}` : ''
+  document.getElementById('premadeDescription').textContent = (description) ? `Description: ${description}` : ''
+  document.getElementById('addPremadeToRoutine').style.display = 'block'
+}
+
+const renderPremadeWorkoutsTable = () => {
+  let htmlText = document.getElementById("premadeTable").innerHTML
+  axios.get('/api/workouts')
+    .then(({ data }) => {
+      let types = {
+        legs: [],
+        chest: [],
+        shoulders: [],
+        back: [],
+        biceps: [],
+        triceps: [],
+        core: []
+      }
+
+      data.forEach(workout => {
+        types[workout.muscle].push(workout)
+      })
+      let len = 0
+      let muscles = ["legs", "chest", "shoulders", "back", "biceps", "triceps", "core"]
+      for (let i = 0; i < 7; i++) {
+        if (types[muscles[i]].length > len) {
+          len = types[muscles[i]].length
+        }
+      }
+      let htmlText = document.getElementById("premadeTable").innerHTML
+      for (let i = 0; i < len; i++) {
+        htmlText += '<tr>'
+        for (let j = 0; j < 7; j++) {
+          if (types[muscles[j]].length > i) {
+            let { id, title } = types[muscles[j]][i]
+            htmlText += `<td class="premadeWorkout z-depth-2 hoverable" data-id="${id}">${title}</td>`
+          } else {
+            htmlText += `<td class="z-depth-2"></td>`
+          }
+        }
+        htmlText += '</tr>'
+      }
+      document.getElementById("premadeTable").innerHTML = htmlText
+    })
+    .catch(err => { console.error(err) })
+}
+
 const renderWorkout = (day, index) => {
   let { title, muscle, sets, reps, weight, description } = getRoutines()[day][index]
-  htmlText += `
+  let htmlText = `
     <h6 class="truncate wrkotTitle ">
       <a class="halfway-fab waves-effect waves-light modal-trigger" href="#modal">
-        <i class="material-icons editWorkout" data-day="${day}" data-workoutIndex="${index}">fitness_center</i>
+        <i class="material-icons editWorkout" data-day="${day}" data-index="${index}">fitness_center</i>
       </a>
       ${title}
     </h6>
-    <p id="">Muscle: ${muscle}</p>
+    <p id="">Muscle: ${muscle[0].toUpperCase() + muscle.substring(1)}</p>
     <p>Sets: ${sets}</p>
     <p>Reps: ${reps}</p>
           `
@@ -255,7 +294,7 @@ const renderSingleRoutine = (day) => {
           </a>
           ${title}
         </h6>
-        <p id="">Muscle: ${muscle}</p>
+        <p id="">Muscle: ${muscle[0].toUpperCase() + muscle.substring(1)}</p>
         <p>Sets: ${sets}</p>
         <p>Reps: ${reps}</p>
           `
