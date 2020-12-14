@@ -248,7 +248,6 @@ const renderPremadeWorkoutsTable = () => {
   let htmlText = document.getElementById("premadeTable").innerHTML
   axios.get('/api/workouts')
     .then(({ data }) => {
-      console.log(data)
       let types = {
         legs: [],
         chest: [],
@@ -317,7 +316,7 @@ const renderSingleRoutine = (day) => {
   let routine = getRoutines()[day]
   routine.forEach(({ title, muscle, sets, reps, weight, description }, i) => {
     htmlText += `
-      <div class="card hoverable wrkotCard" data-day="${day}" data-index="${i}" id="${day}-${i}">
+      <div class="card hoverable wrkotCard textWhite" data-day="${day}" data-index="${i}" id="${day}-${i}">
         <h6 class="truncate wrkotTitle ">
           <a class="halfway-fab waves-effect waves-light modal-trigger" href="#modal">
             <i class="material-icons editWorkout" data-day="${day}" data-index="${i}">fitness_center</i>
