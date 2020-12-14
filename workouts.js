@@ -135,6 +135,38 @@ Workout.bulkCreate([
     description: NULL
   },
   {
+    title: 'Seated Machine Chest Press',
+    muscle: 'chest',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Seated Incline Machine Chest Press',
+    muscle: 'chest',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Incline Chest Cable Fly',
+    muscle: 'chest',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Pec-Deck Machine',
+    muscle: 'chest',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
     title: 'Push Up',
     muscle: 'chest',
     sets: 3,
@@ -159,6 +191,14 @@ Workout.bulkCreate([
     description: NULL
   },
   {
+    title: 'Arnold Press',
+    muscle: 'shoulders',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
     title: 'Lateral Raise',
     muscle: 'shoulders',
     sets: 3,
@@ -175,7 +215,31 @@ Workout.bulkCreate([
     description: NULL
   },
   {
+    title: 'Bent-Over Reverse Fly',
+    muscle: 'shoulders',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
     title: 'Face Pull',
+    muscle: 'shoulders',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Handstand Pushup',
+    muscle: 'shoulders',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Crab Bridge',
     muscle: 'shoulders',
     sets: 3,
     reps: '15-20',
@@ -231,7 +295,23 @@ Workout.bulkCreate([
     description: NULL
   },
   {
+    title: 'Inverted Row',
+    muscle: 'back',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
     title: 'Back Extension',
+    muscle: 'back',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Pull Ups',
     muscle: 'back',
     sets: 3,
     reps: '8-12',
@@ -263,6 +343,54 @@ Workout.bulkCreate([
     description: NULL
   },
   {
+    title: 'Concentration Curl',
+    muscle: 'biceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Preacher Curl',
+    muscle: 'biceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Incline Dumbell Curl',
+    muscle: 'biceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Cable Rope Hammer Curl',
+    muscle: 'biceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Double Cable Flex Curl',
+    muscle: 'biceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Standing Resistance Band Hammer Curl',
+    muscle: 'biceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
     title: 'Dips',
     muscle: 'triceps',
     sets: 3,
@@ -287,7 +415,47 @@ Workout.bulkCreate([
     description: NULL
   },
   {
+    title: 'Close-Grip Bench Press',
+    muscle: 'triceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Rope Tricep Pushdown',
+    muscle: 'triceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
     title: 'Overhead Tricep Extension',
+    muscle: 'triceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Tricep Kickback',
+    muscle: 'triceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Bench Dip',
+    muscle: 'triceps',
+    sets: 3,
+    reps: '8-12',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Diamond Push Up',
     muscle: 'triceps',
     sets: 3,
     reps: '8-12',
@@ -317,7 +485,56 @@ Workout.bulkCreate([
     reps: '15-20',
     weight: NULL,
     description: NULL
+  },
+  {
+    title: 'Crunch',
+    muscle: 'core',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Bicycle Crunch',
+    muscle: 'core',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Russian Twist',
+    muscle: 'core',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Wood Chop',
+    muscle: 'core',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'Crunchy Frogs',
+    muscle: 'core',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
+  },
+  {
+    title: 'In and Outs',
+    muscle: 'core',
+    sets: 3,
+    reps: '15-20',
+    weight: NULL,
+    description: NULL
   }
 ])
 
 sequelize.sync()
+
