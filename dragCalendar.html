@@ -7,6 +7,7 @@
   <title>Fitness Edge - Calendar</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <style>
@@ -102,6 +103,19 @@
         max-width: 100%;
       }
     }
+    
+/* close button classes */
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 15%;
+  right: 0%;
+  padding: 3px 3px;
+  transform: translate(0%, -50%);
+}
+
+.close:hover {background: #bbb;}
+/* close button classes */
 
 .gu-mirror {
   position: fixed !important;
@@ -163,7 +177,7 @@
         <div class="card hoverable wrkotCard" draggable="true" ondragstart="drag(event)" id="drag1">
           <h6 class="truncate wrkotTitle "><a class="halfway-fab waves-effect waves-light modal-trigger"
               href="#modalMonday"><i class="material-icons">fitness_center</i></a></a>Big Gain
-            Triceps(custom)</h6>
+            Triceps</h6><span class="close"><i class="fas fa-trash-alt"></i></span>
           <p>Reps: 7,000 reps</p>
           <p>Weight: 80,000 Lbs</p>
         </div>
@@ -1080,6 +1094,17 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
+}
+
+
+// Close Button Functionality
+var closebtns = document.getElementsByClassName("close");
+var i;
+
+for (i = 0; i < closebtns.length; i++) {
+  closebtns[i].addEventListener("click", function() {
+    this.parentElement.style.display = 'none';
+  });
 }
   </script>
 </body>
