@@ -10,6 +10,8 @@ Have you wanted to start going to the gym but don't know where to start? Achieve
 - HTML/CSS/JS
 - [Node.JS](https://nodejs.org/en/)
 - [MySQL](https://www.mysql.com/)
+- Express
+- AXIOS
 - [Sequelize](https://sequelize.org/)
 - [Materialize](https://materializecss.com/)
 - [Dragula](https://github.com/bevacqua/dragula)
