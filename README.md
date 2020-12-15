@@ -36,7 +36,7 @@ Have you wanted to start going to the gym but don't know where to start? Achieve
 
 # MIT License
 
-Copyright (c) 2012-2020 Scott Chacon and others
+Copyright (c) 2012-2020 Ronald Esteban and others
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
